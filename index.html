@@ -16,14 +16,23 @@
             color: white;
         }
 
-        /* Navigation bar */
-        nav {
-            background: #111;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+ nav {
+    background: #111;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;   /* keeps it visible */
+    top: 0;            /* sticks to the top */
+    left: 0;
+    width: 100%;       /* spans full width */
+    z-index: 1000;     /* stays above other content */
+}
+section {
+    padding: 80px 20px;   /* extra top padding */
+    min-height: 100vh;
+}
+
 
         /* Profile section (circle + name) */
         nav .profile {
