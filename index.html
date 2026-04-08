@@ -12,39 +12,56 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
+            background: black;
+            color: white;
         }
 
+        /* Navigation bar */
         nav {
-            background: #333;
-            padding: 10px;
-            text-align: center;
+            background: #111;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        nav a {
+        nav .links a {
             color: white;
             margin: 0 15px;
             text-decoration: none;
             font-weight: bold;
         }
 
+        /* Profile section (circle + name) */
+        nav .profile {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .profile img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: gray; /* empty placeholder */
+            margin-right: 10px;
+        }
+
         section {
             padding: 60px;
             min-height: 100vh;
+            text-align: center;
         }
 
         #home {
-            background: #f4f4f4;
-            text-align: center;
+            background: #222;
         }
 
         #about {
-            background: #ddd;
-            text-align: center;
+            background: #333;
         }
 
         #achievements {
-            background: #ccc;
-            text-align: center;
+            background: #444;
         }
 
         img, video {
@@ -57,9 +74,15 @@
 
     <!-- Navigation -->
     <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#achievements">Achievements</a>
+        <div class="links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#achievements">Achievements</a>
+        </div>
+        <div class="profile">
+            <img src="" alt="Profile Image">
+            <span>Roman Maque</span>
+        </div>
     </nav>
 
     <!-- Home Section -->
@@ -71,7 +94,6 @@
     <!-- About Section -->
     <section id="about">
         <h1>About Me</h1>
-
         <h5>Welcome to my Portfolio! I'm Roman B Maque, a 2nd-year IT student.</h5>
         <h5>Check out my portfolio featuring my MLBB preset creations on TikTok and school project showcasing my graphic design skills in Canva and Figma.</h5>
     </section>
@@ -79,7 +101,6 @@
     <!-- Achievements Section -->
     <section id="achievements">
         <h1>Achievements</h1>
-
         <p>
             Check out my MLBB preset creations on TikTok! I craft visually stunning designs 
             that elevate gameplay and self-expression. Follow my account for samples and inspiration!
@@ -111,8 +132,9 @@
         <video width="300" controls>
             <source src="vid3.mp4" type="video/mp4">
         </video>
-
     </section>
+
+</body>
 
     <h3>My Resume</h3>
 <img src="resume.jpg" width="350"><br>
