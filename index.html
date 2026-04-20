@@ -4,6 +4,41 @@
   <meta charset="UTF-8">
   <title>My Website</title>
   <style>
+    .stats-section {
+      display: flex;
+      justify-content: space-around;
+      padding: 40px;
+      color: white;
+    }
+
+    .stats-box {
+      width: 150px;              /* fixed width */
+      height: 150px;             /* fixed height to make it square */
+      background: skyblue;
+      border-radius: 8px;
+      margin: 10px;
+      text-align: center;
+      display: flex;             /* center text inside */
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .stats-box:hover {
+      transform: translateY(-8px); /* float effect */
+      box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    }
+
+    .stats-box a {
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .stats-box h3, .stats-box p {
+      margin: 5px 0;
+    }
     /* Home Section background */
     #home {
       background: linear-gradient(to right, purple, black);
@@ -336,29 +371,6 @@
     #about, #tiktok, #projects, #achievements, #contact {
       background: linear-gradient(to right, purple, grey);
     }
-
-    /* Stats Section */
-    .stats-section {
-      display: flex;
-      justify-content: space-around;
-      padding: 40px;
-      color: white;
-    }
-
-    .stats-box {
-      display: inline-block;
-      background: skyblue;
-      padding: 6px 12px; /* tighter padding so background fits text */
-      border-radius: 8px;
-      margin: 10px;
-      text-align: center;
-    }
-
-    .stats-box a {
-      color: black;
-      text-decoration: none;
-      font-weight: bold;
-    }
   </style>
 </head>
   
@@ -396,24 +408,24 @@
 </section>
 
 <!-- Stats Section -->
-<section class="stats-section" style="display:flex; justify-content:space-around; padding:40px; color:white;">
-  <div class="stats-box" style="display:inline-block; background:skyblue; padding:6px 12px; border-radius:8px; margin:10px; text-align:center;">
-    <a href="#tiktok" style="color:black; text-decoration:none; font-weight:bold;">
-      <h3 style="margin:0;">Viral TikToks</h3>
-      <p style="margin:0;">150M+ Views</p>
-    </a>
-  </div>
-  <div class="stats-box" style="display:inline-block; background:skyblue; padding:6px 12px; border-radius:8px; margin:10px; text-align:center;">
-    <a href="#skills" style="color:black; text-decoration:none; font-weight:bold;">
-      <h3 style="margin:0;">My Skills</h3>
-    </a>
-  </div>
-  <div class="stats-box" style="display:inline-block; background:skyblue; padding:6px 12px; border-radius:8px; margin:10px; text-align:center;">
-    <a href="#achievements" style="color:black; text-decoration:none; font-weight:bold;">
-      <h3 style="margin:0;">My Achievements</h3>
-    </a>
-  </div>
-</section>
+  <section class="stats-section">
+    <div class="stats-box">
+      <a href="#tiktok">
+        <h3>Viral TikToks</h3>
+        <p>150M+ Views</p>
+      </a>
+    </div>
+    <div class="stats-box">
+      <a href="#skills">
+        <h3>My Skills</h3>
+      </a>
+    </div>
+    <div class="stats-box">
+      <a href="#achievements">
+        <h3>My Achievements</h3>
+      </a>
+    </div>
+  </section>
 
 
 <!-- About Section -->
