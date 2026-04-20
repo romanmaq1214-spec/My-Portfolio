@@ -108,11 +108,11 @@ section {
   <img src="chat-icon.png" alt="Chat" style="width:30px; height:30px;">
 </div>
 
-<!-- Chatbot Window (hidden by default) -->
+<!-- Chatbot Window -->
 <div id="chatbotWindow" style="position:fixed; bottom:90px; right:20px; width:300px; height:400px; background:#222; color:white; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.5); display:none; flex-direction:column;">
   <div style="background:#111; padding:10px; font-weight:bold;">Chatbot</div>
-  <div id="chatbox" style="flex:1; padding:10px; overflow-y:auto;">
-    <p><b>Bot:</b> Hi! Click below and ask me something.</p>
+  <div id="chatbox" style="flex:1; padding:10px; overflow-y:auto; display:flex; flex-direction:column; gap:10px;">
+    <div style="align-self:flex-end; background:#00aaff; padding:8px 12px; border-radius:15px; max-width:80%;">Hi! I’m your bot. Say hello!</div>
   </div>
   <div style="padding:10px; display:flex; gap:5px;">
     <input id="userInput" type="text" placeholder="Type a message..." style="flex:1; padding:5px;">
@@ -127,18 +127,29 @@ section {
     win.style.display = (win.style.display === "none" || win.style.display === "") ? "flex" : "none";
   };
 
-  // Simple chatbot logic
+  // Chatbot logic
   function sendMessage() {
     let input = document.getElementById("userInput").value.trim();
     if(input === "") return;
 
     let chatbox = document.getElementById("chatbox");
-    chatbox.innerHTML += "<p><b>You:</b> " + input + "</p>";
 
+    // User message bubble (left side)
+    let userBubble = document.createElement("div");
+    userBubble.style.alignSelf = "flex-start";
+    userBubble.style.background = "#00aaff";
+    userBubble.style.padding = "8px 12px";
+    userBubble.style.borderRadius = "15px";
+    userBubble.style.maxWidth = "80%";
+    userBubble.innerText = input;
+    chatbox.appendChild(userBubble);
+
+    // Bot response
     let response = "Sorry, I don't understand.";
 
-    // Basic responses based on your site info
-    if(input.toLowerCase().includes("developer")) {
+    if(input.toLowerCase() === "hi" || input.toLowerCase() === "hello") {
+      response = "Hello! How are you today?";
+    } else if(input.toLowerCase().includes("developer")) {
       response = "The developer of this website is Roman B. Maque, a 2nd-year IT student.";
     } else if(input.toLowerCase().includes("about")) {
       response = "This portfolio showcases Roman Maque’s MLBB presets, Canva and Figma projects, and achievements.";
@@ -146,11 +157,21 @@ section {
       response = "You can reach Roman at romanmaq0123@gmail.com or +63 930 630 6156.";
     }
 
-    chatbox.innerHTML += "<p><b>Bot:</b> " + response + "</p>";
+    // Bot message bubble (right side)
+    let botBubble = document.createElement("div");
+    botBubble.style.alignSelf = "flex-end";
+    botBubble.style.background = "#00aaff";
+    botBubble.style.padding = "8px 12px";
+    botBubble.style.borderRadius = "15px";
+    botBubble.style.maxWidth = "80%";
+    botBubble.innerText = response;
+    chatbox.appendChild(botBubble);
+
     document.getElementById("userInput").value = "";
     chatbox.scrollTop = chatbox.scrollHeight;
   }
 </script>
+
 
     
     <!-- Navigation -->
