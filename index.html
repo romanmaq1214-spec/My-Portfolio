@@ -150,7 +150,7 @@ section {
     document.getElementById("userInput").value = "";
     chatbox.scrollTop = chatbox.scrollHeight;
 
-    // Show typing indicator
+    // Typing indicator
     let typingDiv = document.createElement("div");
     typingDiv.style.display = "flex";
     typingDiv.style.alignItems = "center";
@@ -164,18 +164,27 @@ section {
     setTimeout(function() {
       chatbox.removeChild(typingDiv);
 
-      let response = "Sorry, I don't understand.";
+      let response;
 
-      if(input.toLowerCase() === "hi" || input.toLowerCase() === "hello") {
-        response = "Hello! Nice to chat with you.";
-      } else if(input.toLowerCase().includes("developer")) {
+      // Portfolio-specific answers (based only on your site info)
+      if(input.toLowerCase().includes("developer")) {
         response = "The developer of this website is Roman B. Maque, a 2nd-year IT student.";
       } else if(input.toLowerCase().includes("about")) {
         response = "This portfolio showcases Roman Maque’s MLBB presets, Canva and Figma projects, and achievements.";
       } else if(input.toLowerCase().includes("contact")) {
         response = "You can reach Roman at romanmaq0123@gmail.com or +63 930 630 6156.";
+      } else {
+        // Free AI-style replies for other questions
+        if(input.toLowerCase().includes("hi") || input.toLowerCase().includes("hello")) {
+          response = "Hello! Nice to chat with you.";
+        } else if(input.toLowerCase().includes("how are you")) {
+          response = "I’m doing great, thanks for asking! How about you?";
+        } else {
+          response = "That’s interesting! I’ll try my best to answer: " + input;
+        }
       }
 
+      // Bot message bubble (left side with icon)
       let botBubble = document.createElement("div");
       botBubble.style.display = "flex";
       botBubble.style.alignItems = "center";
@@ -188,8 +197,6 @@ section {
     }, 1000); // 1 second typing delay
   }
 </script>
-
-
 
     
     <!-- Navigation -->
