@@ -1,10 +1,42 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="UTF-8">
-    <title>My Website</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>My Website</title>
+  <style>
+    /* Home Section background */
+    #home {
+      background: linear-gradient(to right, purple, black);
+    }
+
+    /* All other sections background */
+    #about, #tiktok, #projects, #achievements, #contact {
+      background: linear-gradient(to right, purple, grey);
+    }
+
+    /* Stats Section */
+    .stats-section {
+      display: flex;
+      justify-content: space-around;
+      padding: 40px;
+      color: white;
+    }
+
+    .stats-box {
+      display: inline-block;
+      background: skyblue;
+      padding: 6px 12px; /* tighter padding so background fits text */
+      border-radius: 8px;
+      margin: 10px;
+      text-align: center;
+    }
+
+    .stats-box a {
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
 </head>
 
 <!-- Navigation -->
