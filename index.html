@@ -208,11 +208,12 @@ section {
     <span style="color:white; font-weight:bold;">ROMAN MAQUE</span>
     <img src="" alt="Profile Placeholder" style="width:40px; height:40px; border-radius:50%; background:#555;">
   </div>
-  <div style="display:flex; gap:25px;">
-    <a href="#home" style="color:white; text-decoration:none;">Home</a>
-    <a href="#about" style="color:white; text-decoration:none;">About</a>
-    <a href="#contact" style="color:white; text-decoration:none;">Contact</a>
-  </div>
+  <div style="display:flex; gap:25px; padding-right:40px; margin-right:40px;">
+  <a href="#home" style="color:white; text-decoration:none;">Home</a>
+  <a href="#about" style="color:white; text-decoration:none;">About</a>
+  <a href="#contact" style="color:white; text-decoration:none;">Contact</a>
+</div>
+
 </nav>
 
 <!-- Hero Section -->
@@ -233,31 +234,35 @@ section {
 
 <!-- Stats Section -->
 <section style="background:#111; color:white; padding:60px; display:flex; justify-content:space-around;">
-  <div style="text-align:center;">
-    <a href="#tiktok" style="color:white; text-decoration:none;">
+  <div style="text-align:center; background:skyblue; padding:20px; border-radius:8px;">
+    <a href="#tiktok" style="color:black; text-decoration:none;">
       <h3>Viral TikToks</h3>
       <p>150M+ Views</p>
     </a>
   </div>
-  <div style="text-align:center;">
-    <a href="#skills" style="color:white; text-decoration:none;">
+  <div style="text-align:center; background:skyblue; padding:20px; border-radius:8px;">
+    <a href="#skills" style="color:black; text-decoration:none;">
       <h3>My Skills</h3>
     </a>
   </div>
-  <div style="text-align:center;">
-    <a href="#achievements" style="color:white; text-decoration:none;">
+  <div style="text-align:center; background:skyblue; padding:20px; border-radius:8px;">
+    <a href="#achievements" style="color:black; text-decoration:none;">
       <h3>My Achievements</h3>
     </a>
   </div>
 </section>
 
+
 <!-- About Section -->
-<section id="about">
-  <h1>About Me</h1>
-  <h5>Welcome to my Portfolio! I'm Roman B Maque, a 2nd-year IT student.</h5>
-  <h5>22 years old, from Brgy 7. Poblacion Moises Padilla.</h5>
-  <h5>Check out my portfolio featuring my MLBB preset creations on TikTok and school project showcasing my graphic design skills in Canva and Figma.</h5>
+<section id="about" style="padding:40px 20px; min-height:90vh; background:linear-gradient(to right, purple, gray);">
+  <div style="max-width:600px; margin:0 auto; background:#222; padding:20px; border-radius:8px;">
+    <h1>About Me</h1>
+    <h5>Welcome to my Portfolio! I'm Roman B Maque, a 2nd-year IT student.</h5>
+    <h5>22 years old, from Brgy 7. Poblacion Moises Padilla.</h5>
+    <h5>Check out my portfolio featuring my MLBB preset creations on TikTok and school project showcasing my graphic design skills in Canva and Figma.</h5>
+  </div>
 </section>
+
 
 <!-- Viral TikToks Section -->
 <section id="tiktok" style="background:#222; color:white; padding:60px; text-align:center;">
@@ -277,7 +282,7 @@ section {
 </section>
 
 <!-- Projects Section -->
-<section id="projects" style="background:#333; color:white; padding:60px;">
+<section id="projects" style="padding-top:100px; background:linear-gradient(to right, purple, gray);">
   <h2 style="text-align:center;">MY SAMPLE OUTPUTS</h2>
   <div style="text-align:left; max-width:600px; margin:0 auto;">
     <h3>1. Canva Portfolio</h3>
@@ -334,7 +339,8 @@ section {
 
     
     <!-- Contact Form -->
-    <form id="contactForm" action="https://formspree.io/f/mjgjooey" method="POST" style="margin-top:20px; text-align:left;">
+    <form id="contactForm" action="https://formspree.io/f/mjgjooey" method="POST" 
+      style="margin:20px auto; text-align:left; max-width:500px; background:#222; padding:20px; border-radius:8px;">
   <label>First Name</label>
   <input type="text" name="first_name" style="width:100%; padding:8px; margin-bottom:10px;">
   
