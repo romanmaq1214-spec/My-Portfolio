@@ -106,30 +106,6 @@
             display: block;
             margin: 15px auto;
         }
-
-        /* Stats section */
-        .stats-section {
-            display: flex;
-            justify-content: space-around;
-            padding: 60px;
-            color: white;
-        }
-
-        /* Stats box styles */
-        .stats-box {
-            display: inline-block;
-            background: skyblue;
-            padding: 5px 10px;
-            border-radius: 8px;
-            margin: 10px;
-            text-align: center;
-        }
-
-        .stats-box a {
-            color: black;
-            text-decoration: none;
-            font-weight: bold;
-        }
         .navbar {
   background: #111;
   padding: 15px 40px;
@@ -389,8 +365,6 @@
   </div>
 </nav>
 
-
-
 <!-- Hero Section -->
 <section id="home" class="hero">
   <div class="hero-text">
@@ -405,27 +379,28 @@
   <div class="hero-image">
     <img src="prof1.jpg" alt="Roman Maque">
   </div>
+
+  <!-- Stats Section now inside Home -->
+  <div class="stats-section" style="display:flex; justify-content:space-around; padding:40px; color:white;">
+    <div class="stats-box" style="width:150px; height:150px; background:skyblue; border-radius:8px; margin:10px; text-align:center; display:flex; flex-direction:column; justify-content:center; align-items:center; transition:transform 0.3s ease, box-shadow 0.3s ease;">
+      <a href="#tiktok" style="color:black; text-decoration:none; font-weight:bold;">
+        <h3 style="margin:5px 0;">Viral TikToks</h3>
+        <p style="margin:5px 0;">150M+ Views</p>
+      </a>
+    </div>
+    <div class="stats-box" style="width:150px; height:150px; background:skyblue; border-radius:8px; margin:10px; text-align:center; display:flex; flex-direction:column; justify-content:center; align-items:center; transition:transform 0.3s ease, box-shadow 0.3s ease;">
+      <a href="#skills" style="color:black; text-decoration:none; font-weight:bold;">
+        <h3 style="margin:5px 0;">My Skills</h3>
+      </a>
+    </div>
+    <div class="stats-box" style="width:150px; height:150px; background:skyblue; border-radius:8px; margin:10px; text-align:center; display:flex; flex-direction:column; justify-content:center; align-items:center; transition:transform 0.3s ease, box-shadow 0.3s ease;">
+      <a href="#achievements" style="color:black; text-decoration:none; font-weight:bold;">
+        <h3 style="margin:5px 0;">My Achievements</h3>
+      </a>
+    </div>
+  </div>
 </section>
 
-<!-- Stats Section -->
-  <section class="stats-section">
-    <div class="stats-box">
-      <a href="#tiktok">
-        <h3>Viral TikToks</h3>
-        <p>150M+ Views</p>
-      </a>
-    </div>
-    <div class="stats-box">
-      <a href="#skills">
-        <h3>My Skills</h3>
-      </a>
-    </div>
-    <div class="stats-box">
-      <a href="#achievements">
-        <h3>My Achievements</h3>
-      </a>
-    </div>
-  </section>
 
 
 <!-- About Section -->
