@@ -103,6 +103,56 @@ section {
 </head>
 <body>
 
+<!-- Chatbot Button -->
+<div id="chatbotButton" style="position:fixed; bottom:20px; right:20px; width:60px; height:60px; border-radius:50%; background:#00aaff; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 0 10px rgba(0,0,0,0.5);">
+  <img src="chat-icon.png" alt="Chat" style="width:30px; height:30px;">
+</div>
+
+<!-- Chatbot Window (hidden by default) -->
+<div id="chatbotWindow" style="position:fixed; bottom:90px; right:20px; width:300px; height:400px; background:#222; color:white; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.5); display:none; flex-direction:column;">
+  <div style="background:#111; padding:10px; font-weight:bold;">Chatbot</div>
+  <div id="chatbox" style="flex:1; padding:10px; overflow-y:auto;">
+    <p><b>Bot:</b> Hi! Click below and ask me something.</p>
+  </div>
+  <div style="padding:10px; display:flex; gap:5px;">
+    <input id="userInput" type="text" placeholder="Type a message..." style="flex:1; padding:5px;">
+    <button onclick="sendMessage()" style="padding:5px 10px; background:#00aaff; border:none; color:white;">Send</button>
+  </div>
+</div>
+
+<script>
+  // Toggle chatbot window
+  document.getElementById("chatbotButton").onclick = function() {
+    let win = document.getElementById("chatbotWindow");
+    win.style.display = (win.style.display === "none" || win.style.display === "") ? "flex" : "none";
+  };
+
+  // Simple chatbot logic
+  function sendMessage() {
+    let input = document.getElementById("userInput").value.trim();
+    if(input === "") return;
+
+    let chatbox = document.getElementById("chatbox");
+    chatbox.innerHTML += "<p><b>You:</b> " + input + "</p>";
+
+    let response = "Sorry, I don't understand.";
+
+    // Basic responses based on your site info
+    if(input.toLowerCase().includes("developer")) {
+      response = "The developer of this website is Roman B. Maque, a 2nd-year IT student.";
+    } else if(input.toLowerCase().includes("about")) {
+      response = "This portfolio showcases Roman Maque’s MLBB presets, Canva and Figma projects, and achievements.";
+    } else if(input.toLowerCase().includes("contact")) {
+      response = "You can reach Roman at romanmaq0123@gmail.com or +63 930 630 6156.";
+    }
+
+    chatbox.innerHTML += "<p><b>Bot:</b> " + response + "</p>";
+    document.getElementById("userInput").value = "";
+    chatbox.scrollTop = chatbox.scrollHeight;
+  }
+</script>
+
+    
     <!-- Navigation -->
 <nav style="background:#111; padding:5px 30px; display:flex; justify-content:space-between; align-items:center; position:fixed; top:0; left:0; width:100%; z-index:1000; height:60px;">
     <div class="profile" style="display:flex; align-items:center;">
@@ -148,30 +198,29 @@ section {
   <div style="max-width:400px; margin:0 auto; background:#222; padding:20px; box-shadow:0 0 10px rgba(0,0,0,0.5); border-radius:8px;">
     
     <!-- Profile -->
-    <img src="fbprof.png" alt="Profile Image" width="100" height="100" style="border-radius:50%; background:#555; display:block; margin:0 auto 10px;">
+    <img src="profile-placeholder.png" alt="Profile Image" width="100" height="100" style="border-radius:50%; background:#555; display:block; margin:0 auto 10px;">
     <h3 style="text-align:center; margin:10px 0;">Roman Maque</h3>
     <p style="text-align:center; color:#aaa; margin-bottom:20px;">Video Editor</p>
     
     <!-- Contact Info aligned left -->
     <div style="text-align:left; margin:0 auto; max-width:300px;">
       <p style="display:flex; align-items:center; gap:10px; margin:10px 0;">
-        <img src="gmail.png" alt="Email Icon" width="24" height="24">
+        <img src="email-icon.png" alt="Email Icon" width="24" height="24">
         <span>romanmaq0123@gmail.com</span>
       </p>
       
       <p style="display:flex; align-items:center; gap:10px; margin:10px 0;">
-        <img src="fb.png" alt="Facebook Icon" width="24" height="24">
+        <img src="facebook-icon.png" alt="Facebook Icon" width="24" height="24">
         <a href="YOUR_FACEBOOK_URL" target="_blank" style="color:#00aaff; text-decoration:none;">Roman Maque</a>
       </p>
       
       <p style="display:flex; align-items:center; gap:10px; margin:10px 0;">
-        <img src="cp.png" alt="Phone Icon" width="24" height="24">
+        <img src="phone-icon.png" alt="Phone Icon" width="24" height="24">
         <span>+63 930 630 6156</span>
       </p>
     </div>
   </div>
 </section>
-✅ Fixes applied
 
     
     <!-- Contact Form -->
