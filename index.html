@@ -173,21 +173,22 @@ section {
     </div>
     
     <!-- Contact Form -->
-    <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="margin-top:20px; text-align:left;">
-      <label>First Name</label>
-      <input type="text" name="first_name" style="width:100%; padding:8px; margin-bottom:10px;">
-      
-      <label>Last Name</label>
-      <input type="text" name="last_name" style="width:100%; padding:8px; margin-bottom:10px;">
-      
-      <label>Email Address</label>
-      <input type="email" name="email" style="width:100%; padding:8px; margin-bottom:10px;">
-      
-      <label>Message</label>
-      <textarea name="message" rows="4" style="width:100%; padding:8px; margin-bottom:10px;"></textarea>
-      
-      <button type="submit" style="width:100%; padding:10px; background:#00aaff; color:white; border:none; font-weight:bold;">SEND MESSAGE</button>
-    </form>
+    <form id="contactForm" action="sendmail.php" method="POST" style="margin-top:20px; text-align:left;">
+  <label>First Name</label>
+  <input type="text" name="first_name" style="width:100%; padding:8px; margin-bottom:10px;">
+  
+  <label>Last Name</label>
+  <input type="text" name="last_name" style="width:100%; padding:8px; margin-bottom:10px;">
+  
+  <label>Email Address</label>
+  <input type="email" name="email" style="width:100%; padding:8px; margin-bottom:10px;">
+  
+  <label>Message</label>
+  <textarea name="message" rows="4" style="width:100%; padding:8px; margin-bottom:10px;"></textarea>
+  
+  <button type="submit" style="width:100%; padding:10px; background:#00aaff; color:white; border:none; font-weight:bold;">SEND MESSAGE</button>
+</form>
+
     
     <p style="font-size:12px; color:#777; margin-top:10px; text-align:center;">© 2026 Personal Contact Info. All rights reserved.</p>
   </div>
