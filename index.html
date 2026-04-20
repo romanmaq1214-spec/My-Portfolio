@@ -168,20 +168,22 @@ section {
       let response;
 
       // Portfolio-specific answers (owner voice)
-      if(input.toLowerCase().includes("developer")) {
-        response = "I’m Roman Maque, the developer and owner of this website.";
+      if(input.toLowerCase().includes("who are you") || input.toLowerCase().includes("yourself") || input.toLowerCase().includes("who is roman")) {
+        response = "I’m Roman Maque, the owner and developer of this website. I’m a 2nd-year IT student and a passionate video editor who loves creating content and sharing my projects here.";
+      } else if(input.toLowerCase().includes("developer")) {
+        response = "That’s me! I developed and designed this website myself.";
       } else if(input.toLowerCase().includes("about")) {
-        response = "This site is my portfolio, showing my MLBB presets, Canva and Figma projects, and achievements.";
+        response = "This site is my personal portfolio, where I showcase my MLBB presets, Canva and Figma designs, and other creative projects.";
       } else if(input.toLowerCase().includes("contact")) {
-        response = "You can reach me directly at romanmaq0123@gmail.com or call me at +63 930 630 6156.";
+        response = "You can reach me at romanmaq0123@gmail.com or call me at +63 930 630 6156.";
       } else {
         // Free conversational replies
         if(input.toLowerCase().includes("hi") || input.toLowerCase().includes("hello")) {
-          response = "Hey there! Glad you stopped by my site.";
+          response = "Hey there! I’m Roman, nice to meet you.";
         } else if(input.toLowerCase().includes("how are you")) {
-          response = "I’m doing well, thanks! Working on new projects. How about you?";
+          response = "I’m doing great, thanks for asking! Working on new projects and improving my skills.";
         } else {
-          response = "I’m Roman, the owner here. That’s an interesting question — here’s my thought: " + input;
+          response = "I’m Roman, the owner of this site. That’s an interesting question — here’s what I think: " + input;
         }
       }
 
@@ -198,6 +200,7 @@ section {
     }, 1000); // 1 second typing delay
   }
 </script>
+
 
 
     
