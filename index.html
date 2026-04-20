@@ -96,6 +96,244 @@
             text-decoration: none;
             font-weight: bold;
         }
+        .navbar {
+  background: #111;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.nav-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-profile span {
+  color: white;
+  font-weight: bold;
+}
+
+.nav-profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #555;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  padding-right: 40px;
+  margin-right: 40px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+.hero {
+  background: linear-gradient(to right, purple, black);
+  color: white;
+  padding: 120px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-text {
+  max-width: 50%;
+}
+
+.hero-text .highlight {
+  color: #00aaff;
+}
+
+.hero-buttons {
+  margin-top: 20px;
+}
+
+.btn-primary {
+  background: #00aaff;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn-secondary {
+  border: 2px solid #00aaff;
+  color: #00aaff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.hero-image img {
+  width: 300px;
+  border-radius: 10px;
+}
+.about {
+  padding: 40px 20px;
+  min-height: 90vh;
+  background: linear-gradient(to right, purple, gray);
+}
+
+.about-box {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #222;
+  padding: 20px;
+  border-radius: 8px;
+}
+.tiktok {
+  background: #222;
+  color: white;
+  padding: 60px;
+  text-align: center;
+}
+.projects {
+  padding-top: 100px;
+  background: linear-gradient(to right, purple, gray);
+}
+
+.projects h2 {
+  text-align: center;
+}
+
+.projects-box {
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.achievements {
+  background: #444;
+  color: white;
+  padding: 60px;
+}
+
+.achievements h2 {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.achievements-image {
+  text-align: center;
+}
+
+.achievements-image img {
+  background: #555;
+}
+
+.achievements-text {
+  text-align: center;
+  max-width: 700px;
+  margin: 20px auto;
+}
+.contact {
+  background: linear-gradient(#333, #111);
+  padding: 60px;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+.contact h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contact-box {
+  max-width: 400px;
+  margin: 0 auto;
+  background: #222;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  border-radius: 8px;
+}
+
+.contact-profile {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #555;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.contact-box h3 {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.contact-role {
+  text-align: center;
+  color: #aaa;
+  margin-bottom: 20px;
+}
+
+.contact-info {
+  text-align: left;
+  margin: 0 auto;
+  max-width: 300px;
+}
+
+.contact-info p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.contact-info a {
+  color: #00aaff;
+  text-decoration: none;
+}
+.contact-form {
+  margin: 20px auto;
+  text-align: left;
+  max-width: 500px;
+  background: #222;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 10px;
+  background: #00aaff;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.footer-note {
+  font-size: 12px;
+  color: #777;
+  margin-top: 10px;
+  text-align: center;
+}
+
     </style>
 </head>
 
@@ -103,32 +341,33 @@
 
 <!-- Navigation -->
 <nav class="navbar">
-  <div style="display:flex; align-items:center; gap:10px;">
-    <span style="color:white; font-weight:bold;">ROMAN MAQUE</span>
-    <img src="" alt="Profile Placeholder" style="width:40px; height:40px; border-radius:50%; background:#555;">
+  <div class="nav-profile">
+    <span>ROMAN MAQUE</span>
+    <img src="" alt="Profile Placeholder">
   </div>
-  <div style="display:flex; gap:25px; padding-right:40px; margin-right:40px;">
-    <a href="#home" style="color:white; text-decoration:none;">Home</a>
-    <a href="#about" style="color:white; text-decoration:none;">About</a>
-    <a href="#contact" style="color:white; text-decoration:none;">Contact</a>
+  <div class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
   </div>
 </nav>
 
 <!-- Hero Section -->
-<section id="home" style="background:linear-gradient(to right, purple, black); color:white; padding:120px 40px; display:flex; align-items:center; justify-content:space-between;">
-  <div style="max-width:50%;">
-    <h1>Hi, I'm <span style="color:#00aaff;">Roman Maque</span></h1>
-    <h2 style="color:#00aaff;">Video Editor & IT Specialist</h2>
+<section id="home" class="hero">
+  <div class="hero-text">
+    <h1>Hi, I'm <span class="highlight">Roman Maque</span></h1>
+    <h2 class="highlight">Video Editor & IT Specialist</h2>
     <p>Crafting viral content and stunning edits.</p>
-    <div style="margin-top:20px;">
-      <a href="#projects" style="background:#00aaff; color:white; padding:10px 20px; text-decoration:none; border-radius:5px;">Projects</a>
-      <a href="resume.pdf" download style="border:2px solid #00aaff; color:#00aaff; padding:10px 20px; text-decoration:none; border-radius:5px; margin-left:10px;">Download CV</a>
+    <div class="hero-buttons">
+      <a href="#projects" class="btn-primary">Projects</a>
+      <a href="resume.pdf" download class="btn-secondary">Download CV</a>
     </div>
   </div>
-  <div>
-    <img src="prof1.jpg" alt="Roman Maque" style="width:300px; border-radius:10px;">
+  <div class="hero-image">
+    <img src="prof1.jpg" alt="Roman Maque">
   </div>
 </section>
+
 
 <!-- Stats Section -->
 <section class="stats-section">
@@ -151,8 +390,8 @@
 </section>
 
 <!-- About Section -->
-<section id="about" style="padding:40px 20px; min-height:90vh; background:linear-gradient(to right, purple, gray);">
-  <div style="max-width:600px; margin:0 auto; background:#222; padding:20px; border-radius:8px;">
+<section id="about" class="about">
+  <div class="about-box">
     <h1>About Me</h1>
     <h5>Welcome to my Portfolio! I'm Roman B Maque, a 2nd-year IT student.</h5>
     <h5>22 years old, from Brgy 7. Poblacion Moises Padilla.</h5>
@@ -160,8 +399,9 @@
   </div>
 </section>
 
+
 <!-- Viral TikToks Section -->
-<section id="tiktok" style="background:#222; color:white; padding:60px; text-align:center;">
+<section id="tiktok" class="tiktok">
   <h2>Viral TikToks</h2>
   <p>Check out my MLBB preset creations on TikTok! I craft visually stunning designs that elevate gameplay and self-expression. Follow my account for samples and inspiration!</p>
   <img src="tiktok.png" width="350" alt="TikTok Account">
@@ -178,82 +418,82 @@
 </section>
 
 <!-- Projects Section -->
-<section id="projects" style="padding-top:100px; background:linear-gradient(to right, purple, gray);">
-  <h2 style="text-align:center;">MY SAMPLE OUTPUTS</h2>
-  <div style="text-align:left; max-width:600px; margin:0 auto;">
+<section id="projects" class="projects">
+  <h2>MY SAMPLE OUTPUTS</h2>
+  <div class="projects-box">
     <h3>1. Canva Portfolio</h3>
     <a href="https://www.canva.com/design/DAGwHkWsZLI/IHaTNsMJYzMyZpf4STTnRg/edit?utm_content=DAGwHkWsZLI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">Click Here</a>
+    
     <h3>2. Figma Portfolio</h3>
     <a href="https://www.figma.com/design/C4KWDCwkmlQIy5gOzNWp17/Roman-Maque-2A---Portfolio-Figma-?node-id=1-2885&p=f&t=yRiFxzyrr7bYjqcB-0">Click Here</a>
+    
     <h3>3. Figma E-Commerce</h3>
     <a href="https://www.figma.com/proto/Z8nLiK81BGG9YwSR57Bgig/Maque-BSIT-2-A?node-id=0-1&t=VLzgsJLY6FOlXdkP-1">Click Here</a>
   </div>
 </section>
 
+
 <!-- Achievements Section -->
-<section id="achievements" style="background:#444; color:white; padding:60px;">
-  <h2 style="text-align:center; margin-top:40px;">My Certificates</h2>
-  <div style="text-align:center;">
-    <img src="cert.jpg" alt="Certificate Placeholder" width="400" height="250" style="background:#555;">
+<section id="achievements" class="achievements">
+  <h2>My Certificates</h2>
+  <div class="achievements-image">
+    <img src="cert.jpg" alt="Certificate Placeholder" width="400" height="250">
   </div>
-  <p style="text-align:center; max-width:700px; margin:20px auto;">
+  <p class="achievements-text">
     Here you can see my seminar certificates showcasing my involvement in educational events
     that have strengthened my skills, broadened my perspective, and supported my continuous learning journey.
   </p>
 </section>
-    
+
 <!-- Contact Section -->
-<section id="contact" style="background:linear-gradient(#333, #111); padding:60px; color:white; font-family:Arial, sans-serif; font-weight:bold;">
-  <h2 style="text-align:center; margin-bottom:20px;">PERSONAL CONTACT INFO</h2>
+<section id="contact" class="contact">
+  <h2>PERSONAL CONTACT INFO</h2>
   
-  <div style="max-width:400px; margin:0 auto; background:#222; padding:20px; box-shadow:0 0 10px rgba(0,0,0,0.5); border-radius:8px;">
-    
+  <div class="contact-box">
     <!-- Profile -->
-    <img src="profile-placeholder.png" alt="Profile Image" width="100" height="100" style="border-radius:50%; background:#555; display:block; margin:0 auto 10px;">
-    <h3 style="text-align:center; margin:10px 0;">Roman Maque</h3>
-    <p style="text-align:center; color:#aaa; margin-bottom:20px;">Video Editor</p>
+    <img src="profile-placeholder.png" alt="Profile Image" class="contact-profile">
+    <h3>Roman Maque</h3>
+    <p class="contact-role">Video Editor</p>
     
     <!-- Contact Info aligned left -->
-    <div style="text-align:left; margin:0 auto; max-width:300px;">
-      <p style="display:flex; align-items:center; gap:10px; margin:10px 0;">
-        <img src="email-icon.png" alt="Email Icon" width="24" height="24">
+    <div class="contact-info">
+      <p>
+        <img src="email-icon.png" alt="Email Icon" class="icon">
         <span>romanmaq0123@gmail.com</span>
       </p>
       
-      <p style="display:flex; align-items:center; gap:10px; margin:10px 0;">
-        <img src="facebook-icon.png" alt="Facebook Icon" width="24" height="24">
-        <a href="YOUR_FACEBOOK_URL" target="_blank" style="color:#00aaff; text-decoration:none;">Roman Maque</a>
+      <p>
+        <img src="facebook-icon.png" alt="Facebook Icon" class="icon">
+        <a href="YOUR_FACEBOOK_URL" target="_blank">Roman Maque</a>
       </p>
       
-      <p style="display:flex; align-items:center; gap:10px; margin:10px 0;">
-        <img src="phone-icon.png" alt="Phone Icon" width="24" height="24">
+      <p>
+        <img src="phone-icon.png" alt="Phone Icon" class="icon">
         <span>+63 930 630 6156</span>
       </p>
     </div>
   </div>
 </section>
-
     
-    <!-- Contact Form -->
-    <form id="contactForm" action="https://formspree.io/f/mjgjooey" method="POST" 
-      style="margin:20px auto; text-align:left; max-width:500px; background:#222; padding:20px; border-radius:8px;">
+<!-- Contact Form -->
+<form id="contactForm" action="https://formspree.io/f/mjgjooey" method="POST" class="contact-form">
   <label>First Name</label>
-  <input type="text" name="first_name" style="width:100%; padding:8px; margin-bottom:10px;">
-  
+  <input type="text" name="first_name">
+
   <label>Last Name</label>
-  <input type="text" name="last_name" style="width:100%; padding:8px; margin-bottom:10px;">
-  
+  <input type="text" name="last_name">
+
   <label>Email Address</label>
-  <input type="email" name="email" style="width:100%; padding:8px; margin-bottom:10px;">
-  
+  <input type="email" name="email">
+
   <label>Message</label>
-  <textarea name="message" rows="4" style="width:100%; padding:8px; margin-bottom:10px;"></textarea>
-  
-  <button type="submit" style="width:100%; padding:10px; background:#00aaff; color:white; border:none; font-weight:bold;">SEND MESSAGE</button>
+  <textarea name="message" rows="4"></textarea>
+
+  <button type="submit" class="btn-submit">SEND MESSAGE</button>
 </form>
 
-    
-    <p style="font-size:12px; color:#777; margin-top:10px; text-align:center;">© 2026 Personal Contact Info. All rights reserved.</p>
+<p class="footer-note">© 2026 Personal Contact Info. All rights reserved.</p>
+
   </div>
 </section>
 
