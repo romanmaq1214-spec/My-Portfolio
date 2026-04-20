@@ -205,18 +205,58 @@ section {
 
     
     <!-- Navigation -->
-<nav style="background:#111; padding:5px 30px; display:flex; justify-content:space-between; align-items:center; position:fixed; top:0; left:0; width:100%; z-index:1000; height:60px;">
-    <div class="profile" style="display:flex; align-items:center;">
-        <img src="prof.jpg" alt="Profile Image" style="width:45px; height:45px; border-radius:50%; object-fit:cover; margin-right:8px;">
-        <span style="font-weight:bold;">Roman Maque</span>
-    </div>
-    <div class="links" style="display:flex; gap:25px; padding-right:40px;"> <!-- added padding-right -->
-        <a href="#home" style="color:white; text-decoration:none; font-weight:bold;">Home</a>
-        <a href="#about" style="color:white; text-decoration:none; font-weight:bold;">About</a>
-        <a href="#achievements" style="color:white; text-decoration:none; font-weight:bold;">Achievements</a>
-        <a href="#contact" style="color:white; text-decoration:none; font-weight:bold;">Contact</a>
-    </div>
+<nav style="background:#111; padding:15px 40px; display:flex; justify-content:space-between; align-items:center; position:fixed; top:0; left:0; width:100%; z-index:1000;">
+  <div style="display:flex; align-items:center; gap:10px;">
+    <img src="logo.png" alt="RM Logo" style="width:40px; height:40px;">
+    <span style="color:white; font-weight:bold;">ROMAN MAQUE</span>
+  </div>
+  <div style="display:flex; gap:25px;">
+    <a href="#home" style="color:white; text-decoration:none;">Home</a>
+    <a href="#portfolio" style="color:white; text-decoration:none;">Portfolio</a>
+    <a href="#about" style="color:white; text-decoration:none;">About</a>
+    <a href="#contact" style="color:white; text-decoration:none;">Contact</a>
+  </div>
 </nav>
+
+<!-- Hero Section -->
+<section id="home" style="background:#000; color:white; padding:120px 40px; display:flex; align-items:center; justify-content:space-between;">
+  <div style="max-width:50%;">
+    <h1>Hi, I'm <span style="color:#00aaff;">Roman Maque</span></h1>
+    <h2 style="color:#00aaff;">Video Editor & IT Specialist</h2>
+    <p>Crafting viral content and stunning edits.</p>
+    <div style="margin-top:20px;">
+      <a href="#portfolio" style="background:#00aaff; color:white; padding:10px 20px; text-decoration:none; border-radius:5px;">View Portfolio</a>
+      <a href="Roman_Maque_Resume.pdf" download style="border:2px solid #00aaff; color:#00aaff; padding:10px 20px; text-decoration:none; border-radius:5px; margin-left:10px;">Download CV</a>
+    </div>
+  </div>
+  <div>
+    <img src="profile.jpg" alt="Roman Maque" style="width:300px; border-radius:10px;">
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section style="background:#111; color:white; padding:60px; display:flex; justify-content:space-around;">
+  <div style="text-align:center;">
+    <a href="#tiktok" style="color:white; text-decoration:none;">
+      <h3>Viral TikToks</h3>
+      <p>150M+ Views</p>
+    </a>
+  </div>
+  <div style="text-align:center;">
+    <a href="#skills" style="color:white; text-decoration:none;">
+      <h3>My Skills</h3>
+      <p></p> <!-- Empty for now -->
+    </a>
+  </div>
+  <div style="text-align:center;">
+    <a href="#achievements" style="color:white; text-decoration:none;">
+      <h3>My Achievements</h3>
+      <p>🏆 MLBB Preset Creator<br>🎬 Video Editing Projects<br>🎨 Canva & Figma Designs<br>📱 TikTok Highlights</p>
+    </a>
+  </div>
+</section>
+
+    
 <!-- Home Section -->
 <section id="home">
     <h1>Welcome to My Portfolio</h1>
@@ -234,12 +274,6 @@ section {
             📄 Download My Resume (PDF)
         </a>
     </div>
-</section>
-
-<!-- Achievements Section -->
-<section id="achievements">
-    <h1>Achievements</h1>
-    <!-- Your existing achievements content here -->
 </section>
 
 <!-- Contact Section -->
