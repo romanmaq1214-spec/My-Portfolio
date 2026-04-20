@@ -4,109 +4,104 @@
   <meta charset="UTF-8">
   <title>My Website</title>
   <style>
-    .stats-section {
-      display: flex;
-      justify-content: space-around;
-      padding: 40px;
-      color: white;
-    }
-
-    .stats-box {
-      width: 150px;              /* fixed width */
-      height: 150px;             /* fixed height to make it square */
-      background: skyblue;
-      border-radius: 8px;
-      margin: 10px;
-      text-align: center;
-      display: flex;             /* center text inside */
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .stats-box:hover {
-      transform: translateY(-8px); /* float effect */
-      box-shadow: 0 8px 15px rgba(0,0,0,0.3);
-    }
-
-    .stats-box a {
-      color: black;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .stats-box h3, .stats-box p {
-      margin: 5px 0;
-    }
     /* Home Section background */
-    #home {
-      background: linear-gradient(to right, purple, black);
-    }
- /* Combined body styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            color: white;
-            background: linear-gradient(-45deg, #1a1a1a, #222, #333, #111);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-        }
+#home {
+  background: #222;   /* unified dark background */
+}
 
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+.stats-section {
+  display: flex;
+  justify-content: space-around;
+  padding: 40px;
+  color: white;
+}
 
-        nav {
-            background: #111;
-            padding: 5px 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            height: 60px;
-        }
+.stats-box {
+  width: 150px;              /* fixed width */
+  height: 150px;             /* fixed height to make it square */
+  background: skyblue;
+  border-radius: 8px;
+  margin: 10px;
+  text-align: center;
+  display: flex;             /* center text inside */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-        nav .profile img {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 8px;
-        }
+.stats-box:hover {
+  transform: translateY(-8px); /* float effect */
+  box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+}
 
-        section {
-            padding: 80px 20px;
-            min-height: 100vh;
-        }
+.stats-box a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-        nav .profile {
-            display: flex;
-            align-items: center;
-        }
+.stats-box h3, .stats-box p {
+  margin: 5px 0;
+}
 
-        nav .profile span {
-            font-weight: bold;
-        }
+/* Combined body styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  color: white;
+  background: #222;   /* unified dark background */
+}
 
-        nav .links a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+nav {
+  background: #111;
+  padding: 5px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 60px;
+}
 
-        img, video {
-            display: block;
-            margin: 15px auto;
-        }
-        .navbar {
+nav .profile img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 8px;
+}
+
+section {
+  padding: 80px 20px;
+  min-height: 100vh;
+}
+
+nav .profile {
+  display: flex;
+  align-items: center;
+}
+
+nav .profile span {
+  font-weight: bold;
+}
+
+nav .links a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+img, video {
+  display: block;
+  margin: 15px auto;
+}
+
+.navbar {
   background: #111;
   padding: 15px 40px;
   display: flex;
@@ -148,8 +143,9 @@
   color: white;
   text-decoration: none;
 }
+
 .hero {
-  background: linear-gradient(to right, purple, black);
+  background: #222;   /* unified dark background */
   color: white;
   padding: 120px 40px;
   display: flex;
@@ -190,10 +186,11 @@
   width: 300px;
   border-radius: 10px;
 }
+
 .about {
+  background: #222;   /* unified dark background */
   padding: 40px 20px;
   min-height: 90vh;
-  background: linear-gradient(to right, purple, gray);
 }
 
 .about-box {
@@ -203,15 +200,17 @@
   padding: 20px;
   border-radius: 8px;
 }
+
 .tiktok {
-  background: #222;
+  background: #222;   /* unified dark background */
   color: white;
   padding: 60px;
   text-align: center;
 }
+
 .projects {
+  background: #222;   /* unified dark background */
   padding-top: 100px;
-  background: linear-gradient(to right, purple, gray);
 }
 
 .projects h2 {
@@ -223,8 +222,9 @@
   max-width: 600px;
   margin: 0 auto;
 }
+
 .achievements {
-  background: #444;
+  background: #222;   /* unified dark background */
   color: white;
   padding: 60px;
 }
@@ -247,8 +247,9 @@
   max-width: 700px;
   margin: 20px auto;
 }
+
 .contact {
-  background: linear-gradient(#333, #111);
+  background: #222;   /* unified dark background */
   padding: 60px;
   color: white;
   font-family: Arial, sans-serif;
@@ -311,6 +312,7 @@
   color: #00aaff;
   text-decoration: none;
 }
+
 .contact-form {
   margin: 20px auto;
   text-align: left;
@@ -343,24 +345,7 @@
   margin-top: 10px;
   text-align: center;
 }
-    /* All other sections background */
-    #about, #tiktok, #projects, #achievements, #contact {
-      background: linear-gradient(to right, purple, grey);
-    }
-  </style>
-</head>
-  
-<body>
-<body>
-<!-- Navigation -->
-<nav style="background:#111; height:50px; display:flex; justify-content:center; align-items:center; position:fixed; top:0; left:0; width:100%; z-index:500;">
-  <div style="display:flex; gap:25px;">
-    <a href="#home" style="color:white; text-decoration:none;">Home</a>
-    <a href="#about" style="color:white; text-decoration:none;">About</a>
-    <a href="#contact" style="color:white; text-decoration:none;">Contact</a>
-  </div>
-</nav>
-</body>
+
 
 <!-- Hero Section -->
 <section id="home" class="hero" style="display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:80px 20px;">
