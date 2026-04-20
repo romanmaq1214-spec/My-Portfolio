@@ -284,16 +284,46 @@ body {
 </section>
 
 <!-- Achievements Section -->
-<section id="achievements" class="achievements">
-  <h2>My Certificates</h2>
-  <div class="achievements-image">
-    <img src="cert.jpg" alt="Certificate Placeholder" width="400" height="250">
+<section id="achievements" class="achievements" style="background:linear-gradient(#333,#111); padding:60px; color:white; display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100vh;">
+  <h2 style="margin-bottom:30px;">My Certificates</h2>
+  
+  <!-- Certificates Grid -->
+  <div class="achievements-grid" style="display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; max-width:800px;">
+    <!-- Certificate 1 -->
+    <img src="cert.jpg" alt="Certificate 1" style="width:220px; height:150px; object-fit:cover; border-radius:8px; background:#222; box-shadow:0 0 10px rgba(0,0,0,0.7); cursor:pointer; transition:transform 0.3s ease;">
+    <!-- Empty placeholders -->
+    <img src="" alt="Certificate 2" style="width:220px; height:150px; border-radius:8px; background:#222; box-shadow:0 0 10px rgba(0,0,0,0.7); cursor:pointer; transition:transform 0.3s ease;">
+    <img src="" alt="Certificate 3" style="width:220px; height:150px; border-radius:8px; background:#222; box-shadow:0 0 10px rgba(0,0,0,0.7); cursor:pointer; transition:transform 0.3s ease;">
+    <img src="" alt="Certificate 4" style="width:220px; height:150px; border-radius:8px; background:#222; box-shadow:0 0 10px rgba(0,0,0,0.7); cursor:pointer; transition:transform 0.3s ease;">
+    <img src="" alt="Certificate 5" style="width:220px; height:150px; border-radius:8px; background:#222; box-shadow:0 0 10px rgba(0,0,0,0.7); cursor:pointer; transition:transform 0.3s ease;">
+    <img src="" alt="Certificate 6" style="width:220px; height:150px; border-radius:8px; background:#222; box-shadow:0 0 10px rgba(0,0,0,0.7); cursor:pointer; transition:transform 0.3s ease;">
   </div>
-  <p class="achievements-text">
+
+  <p class="achievements-text" style="max-width:700px; margin-top:30px; text-align:center;">
     Here you can see my seminar certificates showcasing my involvement in educational events
     that have strengthened my skills, broadened my perspective, and supported my continuous learning journey.
   </p>
 </section>
+
+<script>
+  // Hover effect
+  document.querySelectorAll('.achievements-grid img').forEach(img => {
+    img.addEventListener('mouseover', () => {
+      img.style.transform = 'translateY(-8px) scale(1.05)';
+    });
+    img.addEventListener('mouseout', () => {
+      img.style.transform = 'none';
+    });
+    // Click to zoom
+    img.addEventListener('click', () => {
+      if(img.src) {
+        const zoomWin = window.open(img.src, '_blank');
+        zoomWin.focus();
+      }
+    });
+  });
+</script>
+
   
 <!-- Contact Section -->
 <section id="contact" class="contact" style="background:linear-gradient(#333,#111); padding:60px; color:white; font-family:Arial,sans-serif; font-weight:bold;">
