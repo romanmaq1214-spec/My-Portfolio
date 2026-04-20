@@ -110,9 +110,12 @@ section {
 
 <!-- Chatbot Window -->
 <div id="chatbotWindow" style="position:fixed; bottom:90px; right:20px; width:300px; height:400px; background:#222; color:white; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.5); display:none; flex-direction:column;">
-  <div style="background:#111; padding:10px; font-weight:bold;">Chatbot</div>
+  <div style="background:#111; padding:10px; font-weight:bold;">Talk with Roman</div>
   <div id="chatbox" style="flex:1; padding:10px; overflow-y:auto; display:flex; flex-direction:column; gap:10px;">
-    <div style="align-self:flex-end; background:#00aaff; padding:8px 12px; border-radius:15px; max-width:80%;">Hi! I’m your bot. Say hello!</div>
+    <div style="display:flex; align-items:center; gap:5px; align-self:flex-start;">
+      <img src="chat-icon.png" alt="Bot" style="width:20px; height:20px;">
+      <div style="background:#00aaff; padding:8px 12px; border-radius:15px; max-width:80%;">Hi, How can I help you?</div>
+    </div>
   </div>
   <div style="padding:10px; display:flex; gap:5px;">
     <input id="userInput" type="text" placeholder="Type a message..." style="flex:1; padding:5px;">
@@ -134,9 +137,9 @@ section {
 
     let chatbox = document.getElementById("chatbox");
 
-    // User message bubble (left side)
+    // User message bubble (right side)
     let userBubble = document.createElement("div");
-    userBubble.style.alignSelf = "flex-start";
+    userBubble.style.alignSelf = "flex-end";
     userBubble.style.background = "#00aaff";
     userBubble.style.padding = "8px 12px";
     userBubble.style.borderRadius = "15px";
@@ -144,33 +147,48 @@ section {
     userBubble.innerText = input;
     chatbox.appendChild(userBubble);
 
-    // Bot response
-    let response = "Sorry, I don't understand.";
-
-    if(input.toLowerCase() === "hi" || input.toLowerCase() === "hello") {
-      response = "Hello! How are you today?";
-    } else if(input.toLowerCase().includes("developer")) {
-      response = "The developer of this website is Roman B. Maque, a 2nd-year IT student.";
-    } else if(input.toLowerCase().includes("about")) {
-      response = "This portfolio showcases Roman Maque’s MLBB presets, Canva and Figma projects, and achievements.";
-    } else if(input.toLowerCase().includes("contact")) {
-      response = "You can reach Roman at romanmaq0123@gmail.com or +63 930 630 6156.";
-    }
-
-    // Bot message bubble (right side)
-    let botBubble = document.createElement("div");
-    botBubble.style.alignSelf = "flex-end";
-    botBubble.style.background = "#00aaff";
-    botBubble.style.padding = "8px 12px";
-    botBubble.style.borderRadius = "15px";
-    botBubble.style.maxWidth = "80%";
-    botBubble.innerText = response;
-    chatbox.appendChild(botBubble);
-
     document.getElementById("userInput").value = "";
     chatbox.scrollTop = chatbox.scrollHeight;
+
+    // Show typing indicator
+    let typingDiv = document.createElement("div");
+    typingDiv.style.display = "flex";
+    typingDiv.style.alignItems = "center";
+    typingDiv.style.gap = "5px";
+    typingDiv.style.alignSelf = "flex-start";
+    typingDiv.innerHTML = '<img src="chat-icon.png" alt="Bot" style="width:20px; height:20px;"><div style="background:#00aaff; padding:8px 12px; border-radius:15px; max-width:80%;">...</div>';
+    chatbox.appendChild(typingDiv);
+    chatbox.scrollTop = chatbox.scrollHeight;
+
+    // Bot response after delay
+    setTimeout(function() {
+      chatbox.removeChild(typingDiv);
+
+      let response = "Sorry, I don't understand.";
+
+      if(input.toLowerCase() === "hi" || input.toLowerCase() === "hello") {
+        response = "Hello! Nice to chat with you.";
+      } else if(input.toLowerCase().includes("developer")) {
+        response = "The developer of this website is Roman B. Maque, a 2nd-year IT student.";
+      } else if(input.toLowerCase().includes("about")) {
+        response = "This portfolio showcases Roman Maque’s MLBB presets, Canva and Figma projects, and achievements.";
+      } else if(input.toLowerCase().includes("contact")) {
+        response = "You can reach Roman at romanmaq0123@gmail.com or +63 930 630 6156.";
+      }
+
+      let botBubble = document.createElement("div");
+      botBubble.style.display = "flex";
+      botBubble.style.alignItems = "center";
+      botBubble.style.gap = "5px";
+      botBubble.style.alignSelf = "flex-start";
+      botBubble.innerHTML = '<img src="chat-icon.png" alt="Bot" style="width:20px; height:20px;"><div style="background:#00aaff; padding:8px 12px; border-radius:15px; max-width:80%;">' + response + '</div>';
+      chatbox.appendChild(botBubble);
+
+      chatbox.scrollTop = chatbox.scrollHeight;
+    }, 1000); // 1 second typing delay
   }
 </script>
+
 
 
     
