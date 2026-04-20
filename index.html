@@ -12,75 +12,50 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            background: black;
             color: white;
         }
 
-nav {
-    background: #111;
-    padding: 5px 15px;   /* smaller padding */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    height: 60px;        /* fixed smaller height */
-}
-
-/* Profile image sizing */
-nav .profile img {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 8px;
-}
-
-/* Adjust section spacing so titles aren’t hidden */
-section {
-    padding: 100px 20px 60px; /* extra top padding to clear nav */
-    min-height: 100vh;
-}
-
-section {
-    padding: 80px 20px;   /* extra top padding */
-    min-height: 100vh;
-}
-
-
-        /* Profile section (circle + name) */
-        nav .profile {
+        nav {
+            background: #111;
+            padding: 5px 15px;
             display: flex;
+            justify-content: space-between;
             align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            height: 60px;
         }
 
         nav .profile img {
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
             object-fit: cover;
-            margin-right: 10px;
+            margin-right: 8px;
+        }
+
+        section {
+            padding: 80px 20px;
+            min-height: 100vh;
+        }
+
+        nav .profile {
+            display: flex;
+            align-items: center;
         }
 
         nav .profile span {
             font-weight: bold;
         }
 
-        /* Navigation links */
         nav .links a {
             color: white;
             margin: 0 15px;
             text-decoration: none;
             font-weight: bold;
-        }
-
-        section {
-            padding: 60px;
-            min-height: 100vh;
-            text-align: center;
         }
 
         #home {
@@ -95,125 +70,64 @@ section {
             background: #444;
         }
 
-        img, video {
+        img,
+        video {
             display: block;
             margin: 15px auto;
         }
+
+        /* Stats box styles */
+        .stats-box {
+            display: inline-block;
+            background: skyblue;
+            padding: 5px 10px;
+            border-radius: 8px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .stats-box a {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Animated background */
+        body {
+            background: linear-gradient(-45deg, #1a1a1a, #222, #333, #111);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
     </style>
 </head>
+
 <body>
 
-<!-- Chatbot Button -->
-<div id="chatbotButton" style="position:fixed; bottom:20px; right:20px; width:60px; height:60px; border-radius:50%; background:#00aaff; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 0 10px rgba(0,0,0,0.5);">
-  <img src="chat-icon.png" alt="Chat" style="width:30px; height:30px;">
-</div>
-
-<!-- Chatbot Window -->
-<div id="chatbotWindow" style="position:fixed; bottom:90px; right:20px; width:300px; height:400px; background:#222; color:white; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.5); display:none; flex-direction:column;">
-  <div style="background:#111; padding:10px; font-weight:bold;">Talk with Roman</div>
-  <div id="chatbox" style="flex:1; padding:10px; overflow-y:auto; display:flex; flex-direction:column; gap:8px; font-size:14px;">
-    <div style="display:flex; align-items:center; gap:5px; align-self:flex-start;">
-      <img src="chat-icon.png" alt="Bot" style="width:18px; height:18px;">
-      <div style="background:#00aaff; padding:6px 10px; border-radius:12px; max-width:80%;">Hi, How can I help you?</div>
-    </div>
-  </div>
-  <div style="padding:10px; display:flex; gap:5px;">
-    <input id="userInput" type="text" placeholder="Type a message..." style="flex:1; padding:5px; font-size:14px;">
-    <button onclick="sendMessage()" style="padding:5px 10px; background:#00aaff; border:none; color:white; font-size:14px;">Send</button>
-  </div>
-</div>
-
-<script>
-  // Toggle chatbot window
-  document.getElementById("chatbotButton").onclick = function() {
-    let win = document.getElementById("chatbotWindow");
-    win.style.display = (win.style.display === "none" || win.style.display === "") ? "flex" : "none";
-  };
-
-  // Chatbot logic
-  function sendMessage() {
-    let input = document.getElementById("userInput").value.trim();
-    if(input === "") return;
-
-    let chatbox = document.getElementById("chatbox");
-
-    // User message bubble (right side)
-    let userBubble = document.createElement("div");
-    userBubble.style.alignSelf = "flex-end";
-    userBubble.style.background = "#00aaff";
-    userBubble.style.padding = "6px 10px";
-    userBubble.style.borderRadius = "12px";
-    userBubble.style.maxWidth = "80%";
-    userBubble.style.fontSize = "14px";
-    userBubble.innerText = input;
-    chatbox.appendChild(userBubble);
-
-    document.getElementById("userInput").value = "";
-    chatbox.scrollTop = chatbox.scrollHeight;
-
-    // Typing indicator
-    let typingDiv = document.createElement("div");
-    typingDiv.style.display = "flex";
-    typingDiv.style.alignItems = "center";
-    typingDiv.style.gap = "5px";
-    typingDiv.style.alignSelf = "flex-start";
-    typingDiv.innerHTML = '<img src="chat-icon.png" alt="Bot" style="width:18px; height:18px;"><div style="background:#00aaff; padding:6px 10px; border-radius:12px; max-width:80%;">...</div>';
-    chatbox.appendChild(typingDiv);
-    chatbox.scrollTop = chatbox.scrollHeight;
-
-    // Bot response after delay
-    setTimeout(function() {
-      chatbox.removeChild(typingDiv);
-
-      let response;
-
-      // Portfolio-specific answers (owner voice)
-      if(input.toLowerCase().includes("who are you") || input.toLowerCase().includes("yourself") || input.toLowerCase().includes("who is roman")) {
-        response = "I’m Roman Maque, the owner and developer of this website. I’m a 2nd-year IT student and a passionate video editor who loves creating content and sharing my projects here.";
-      } else if(input.toLowerCase().includes("developer")) {
-        response = "That’s me! I developed and designed this website myself.";
-      } else if(input.toLowerCase().includes("about")) {
-        response = "This site is my personal portfolio, where I showcase my MLBB presets, Canva and Figma designs, and other creative projects.";
-      } else if(input.toLowerCase().includes("contact")) {
-        response = "You can reach me at romanmaq0123@gmail.com or call me at +63 930 630 6156.";
-      } else {
-        // Free conversational replies
-        if(input.toLowerCase().includes("hi") || input.toLowerCase().includes("hello")) {
-          response = "Hey there! I’m Roman, nice to meet you.";
-        } else if(input.toLowerCase().includes("how are you")) {
-          response = "I’m doing great, thanks for asking! Working on new projects and improving my skills.";
-        } else {
-          response = "I’m Roman, the owner of this site. That’s an interesting question — here’s what I think: " + input;
-        }
-      }
-
-      // Bot message bubble (left side with icon)
-      let botBubble = document.createElement("div");
-      botBubble.style.display = "flex";
-      botBubble.style.alignItems = "center";
-      botBubble.style.gap = "5px";
-      botBubble.style.alignSelf = "flex-start";
-      botBubble.innerHTML = '<img src="chat-icon.png" alt="Bot" style="width:18px; height:18px;"><div style="background:#00aaff; padding:6px 10px; border-radius:12px; max-width:80%;">' + response + '</div>';
-      chatbox.appendChild(botBubble);
-
-      chatbox.scrollTop = chatbox.scrollHeight;
-    }, 1000); // 1 second typing delay
-  }
-</script>
-
-    
-    <!-- Navigation -->
+<!-- Navigation -->
 <nav style="background:#111; padding:15px 40px; display:flex; justify-content:space-between; align-items:center; position:fixed; top:0; left:0; width:100%; z-index:1000;">
   <div style="display:flex; align-items:center; gap:10px;">
     <span style="color:white; font-weight:bold;">ROMAN MAQUE</span>
     <img src="" alt="Profile Placeholder" style="width:40px; height:40px; border-radius:50%; background:#555;">
   </div>
   <div style="display:flex; gap:25px; padding-right:40px; margin-right:40px;">
-  <a href="#home" style="color:white; text-decoration:none;">Home</a>
-  <a href="#about" style="color:white; text-decoration:none;">About</a>
-  <a href="#contact" style="color:white; text-decoration:none;">Contact</a>
-</div>
-
+    <a href="#home" style="color:white; text-decoration:none;">Home</a>
+    <a href="#about" style="color:white; text-decoration:none;">About</a>
+    <a href="#contact" style="color:white; text-decoration:none;">Contact</a>
+  </div>
 </nav>
 
 <!-- Hero Section -->
@@ -234,23 +148,27 @@ section {
 
 <!-- Stats Section -->
 <section style="background:#111; color:white; padding:60px; display:flex; justify-content:space-around;">
-  <div style="text-align:center; background:skyblue; padding:20px; border-radius:8px;">
-    <a href="#tiktok" style="color:black; text-decoration:none;">
+  <div class="stats-box">
+    <a href="#tiktok">
       <h3>Viral TikToks</h3>
       <p>150M+ Views</p>
     </a>
   </div>
-  <div style="text-align:center; background:skyblue; padding:20px; border-radius:8px;">
-    <a href="#skills" style="color:black; text-decoration:none;">
+  <div class="stats-box">
+    <a href="#skills">
       <h3>My Skills</h3>
     </a>
   </div>
-  <div style="text-align:center; background:skyblue; padding:20px; border-radius:8px;">
-    <a href="#achievements" style="color:black; text-decoration:none;">
+  <div class="stats-box">
+    <a href="#achievements">
       <h3>My Achievements</h3>
     </a>
   </div>
 </section>
+
+<!-- (rest of your sections unchanged) -->
+
+</body>
 
 
 <!-- About Section -->
