@@ -6,7 +6,7 @@
   <style>
     /* Home Section background */
 #home {
-  background: #222;   /* unified dark background */
+  background: linear-gradient(to right, black, gray);
 }
 
 .stats-section {
@@ -17,13 +17,13 @@
 }
 
 .stats-box {
-  width: 150px;              /* fixed width */
-  height: 150px;             /* fixed height to make it square */
+  width: 150px;
+  height: 150px;
   background: skyblue;
   border-radius: 8px;
   margin: 10px;
   text-align: center;
-  display: flex;             /* center text inside */
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -31,7 +31,7 @@
 }
 
 .stats-box:hover {
-  transform: translateY(-8px); /* float effect */
+  transform: translateY(-8px);
   box-shadow: 0 8px 15px rgba(0,0,0,0.3);
 }
 
@@ -45,12 +45,20 @@
   margin: 5px 0;
 }
 
-/* Combined body styles */
+/* Body background */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   color: white;
-  background: #222;   /* unified dark background */
+  background: linear-gradient(-45deg, black, gray, black, gray);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 nav {
@@ -145,7 +153,7 @@ img, video {
 }
 
 .hero {
-  background: #222;   /* unified dark background */
+  background: linear-gradient(to right, black, gray);
   color: white;
   padding: 120px 40px;
   display: flex;
@@ -188,7 +196,7 @@ img, video {
 }
 
 .about {
-  background: #222;   /* unified dark background */
+  background: linear-gradient(to right, black, gray);
   padding: 40px 20px;
   min-height: 90vh;
 }
@@ -202,14 +210,14 @@ img, video {
 }
 
 .tiktok {
-  background: #222;   /* unified dark background */
+  background: linear-gradient(to right, black, gray);
   color: white;
   padding: 60px;
   text-align: center;
 }
 
 .projects {
-  background: #222;   /* unified dark background */
+  background: linear-gradient(to right, black, gray);
   padding-top: 100px;
 }
 
@@ -224,7 +232,7 @@ img, video {
 }
 
 .achievements {
-  background: #222;   /* unified dark background */
+  background: linear-gradient(to right, black, gray);
   color: white;
   padding: 60px;
 }
@@ -249,7 +257,7 @@ img, video {
 }
 
 .contact {
-  background: #222;   /* unified dark background */
+  background: linear-gradient(to right, black, gray);
   padding: 60px;
   color: white;
   font-family: Arial, sans-serif;
@@ -345,6 +353,7 @@ img, video {
   margin-top: 10px;
   text-align: center;
 }
+
 </style>
 
 <!-- Hero Section -->
