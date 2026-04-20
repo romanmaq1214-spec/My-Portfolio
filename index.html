@@ -480,17 +480,21 @@
     <!-- Right side: Contact Form -->
     <div class="contact-right" style="flex:1;">
       <form id="contactForm" action="https://formspree.io/f/mjgjooey" method="POST" style="background:#222; padding:20px; border-radius:8px;">
+        
+        <!-- Instruction line -->
+        <p style="margin-bottom:15px; font-size:14px; color:#00aaff;">Contact me through email</p>
+
         <label>First Name</label>
-        <input type="text" name="first_name" style="width:100%; padding:8px; margin-bottom:10px;">
+        <input type="text" name="first_name" placeholder="Juan" style="width:100%; padding:8px; margin-bottom:10px;">
 
         <label>Last Name</label>
-        <input type="text" name="last_name" style="width:100%; padding:8px; margin-bottom:10px;">
+        <input type="text" name="last_name" placeholder="Dele Cruz" style="width:100%; padding:8px; margin-bottom:10px;">
 
         <label>Email Address</label>
-        <input type="email" name="email" style="width:100%; padding:8px; margin-bottom:10px;">
+        <input type="email" name="email" placeholder="juandelacruz@gmail.com" style="width:100%; padding:8px; margin-bottom:10px;">
 
         <label>Message</label>
-        <textarea name="message" rows="4" style="width:100%; padding:8px; margin-bottom:10px;"></textarea>
+        <textarea name="message" rows="6" style="width:100%; padding:8px; margin-bottom:10px;"></textarea>
 
         <button type="submit" class="btn-submit" style="width:100%; padding:10px; background:#00aaff; color:white; border:none; font-weight:bold; cursor:pointer;">SEND MESSAGE</button>
       </form>
