@@ -455,57 +455,55 @@
 </section>
   
 <!-- Contact Section -->
-<section id="contact" class="contact">
-  <h2>PERSONAL CONTACT INFO</h2>
-  
-  <div class="contact-box">
-    <!-- Left side: Profile + Facebook + Cell -->
-    <div class="contact-left">
-      <img src="fbprof.png" alt="Profile Image" class="contact-profile">
-      <h3>Roman Maque</h3>
-      <p class="contact-role">Video Editor</p>
+<section id="contact" class="contact" style="background:linear-gradient(#333,#111); padding:60px; color:white; font-family:Arial,sans-serif; font-weight:bold;">
+  <div class="contact-box" style="display:flex; justify-content:space-between; align-items:flex-start; max-width:900px; margin:0 auto; background:#222; padding:30px; box-shadow:0 0 10px rgba(0,0,0,0.5); border-radius:8px;">
+    
+    <!-- Left side: Profile + Info -->
+    <div class="contact-left" style="flex:1; margin-right:30px;">
+      <h2 style="text-align:center; margin-bottom:20px;">PERSONAL CONTACT INFO</h2>
+      <img src="fbprof.png" alt="Profile Image" style="width:120px; height:120px; border-radius:50%; background:#555; display:block; margin:0 auto 15px;">
+      <h3 style="text-align:center; margin:10px 0;">Roman Maque</h3>
+      <p class="contact-role" style="text-align:center; color:#aaa; margin-bottom:20px;">Video Editor</p>
 
-      <!-- Contact Info -->
-      <div class="contact-info">
-        <p>
-          <img src="fb.png" alt="Facebook Icon" class="icon">
-          <a href="https://www.facebook.com/roman.maque.2025" target="_blank">Roman Maque</a>
+      <div class="contact-info" style="text-align:left; max-width:250px; margin:0 auto;">
+        <p style="display:flex; align-items:center; gap:10px; margin:10px 0;">
+          <img src="fb.png" alt="Facebook Icon" style="width:24px; height:24px;">
+          <a href="https://www.facebook.com/roman.maque.2025" target="_blank" style="color:#00aaff; text-decoration:none;">Roman Maque</a>
         </p>
-        
-        <p>
-          <img src="phone-icon.png" alt="Phone Icon" class="icon">
+        <p style="display:flex; align-items:center; gap:10px; margin:10px 0;">
+          <img src="phone-icon.png" alt="Phone Icon" style="width:24px; height:24px;">
           <span>+63 930 630 6156</span>
         </p>
       </div>
     </div>
 
     <!-- Right side: Contact Form -->
-    <div class="contact-right">
-      <form id="contactForm" action="https://formspree.io/f/mjgjooey" method="POST" class="contact-form">
+    <div class="contact-right" style="flex:1;">
+      <form id="contactForm" action="https://formspree.io/f/mjgjooey" method="POST" style="background:#222; padding:20px; border-radius:8px;">
         <label>First Name</label>
-        <input type="text" name="first_name">
+        <input type="text" name="first_name" style="width:100%; padding:8px; margin-bottom:10px;">
 
         <label>Last Name</label>
-        <input type="text" name="last_name">
+        <input type="text" name="last_name" style="width:100%; padding:8px; margin-bottom:10px;">
 
         <label>Email Address</label>
-        <input type="email" name="email">
+        <input type="email" name="email" style="width:100%; padding:8px; margin-bottom:10px;">
 
         <label>Message</label>
-        <textarea name="message" rows="4"></textarea>
+        <textarea name="message" rows="4" style="width:100%; padding:8px; margin-bottom:10px;"></textarea>
 
-        <button type="submit" class="btn-submit">SEND MESSAGE</button>
+        <button type="submit" class="btn-submit" style="width:100%; padding:10px; background:#00aaff; color:white; border:none; font-weight:bold; cursor:pointer;">SEND MESSAGE</button>
       </form>
     </div>
   </div>
 
-  <p class="footer-note">© 2026 Personal Contact Info. All rights reserved.</p>
+  <p class="footer-note" style="font-size:12px; color:#777; margin-top:15px; text-align:center;">© 2026 Personal Contact Info. All rights reserved.</p>
 </section>
 
 <script>
   // Popup confirmation after sending
   document.getElementById("contactForm").addEventListener("submit", function(e) {
-    e.preventDefault(); // stop default form submission
+    e.preventDefault(); 
     var form = e.target;
     fetch(form.action, {
       method: form.method,
@@ -523,4 +521,5 @@
     });
   });
 </script>
+
 
