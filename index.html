@@ -111,15 +111,15 @@ section {
 <!-- Chatbot Window -->
 <div id="chatbotWindow" style="position:fixed; bottom:90px; right:20px; width:300px; height:400px; background:#222; color:white; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.5); display:none; flex-direction:column;">
   <div style="background:#111; padding:10px; font-weight:bold;">Talk with Roman</div>
-  <div id="chatbox" style="flex:1; padding:10px; overflow-y:auto; display:flex; flex-direction:column; gap:10px;">
+  <div id="chatbox" style="flex:1; padding:10px; overflow-y:auto; display:flex; flex-direction:column; gap:8px; font-size:14px;">
     <div style="display:flex; align-items:center; gap:5px; align-self:flex-start;">
-      <img src="chat-icon.png" alt="Bot" style="width:20px; height:20px;">
-      <div style="background:#00aaff; padding:8px 12px; border-radius:15px; max-width:80%;">Hi, How can I help you?</div>
+      <img src="chat-icon.png" alt="Bot" style="width:18px; height:18px;">
+      <div style="background:#00aaff; padding:6px 10px; border-radius:12px; max-width:80%;">Hi, How can I help you?</div>
     </div>
   </div>
   <div style="padding:10px; display:flex; gap:5px;">
-    <input id="userInput" type="text" placeholder="Type a message..." style="flex:1; padding:5px;">
-    <button onclick="sendMessage()" style="padding:5px 10px; background:#00aaff; border:none; color:white;">Send</button>
+    <input id="userInput" type="text" placeholder="Type a message..." style="flex:1; padding:5px; font-size:14px;">
+    <button onclick="sendMessage()" style="padding:5px 10px; background:#00aaff; border:none; color:white; font-size:14px;">Send</button>
   </div>
 </div>
 
@@ -141,9 +141,10 @@ section {
     let userBubble = document.createElement("div");
     userBubble.style.alignSelf = "flex-end";
     userBubble.style.background = "#00aaff";
-    userBubble.style.padding = "8px 12px";
-    userBubble.style.borderRadius = "15px";
+    userBubble.style.padding = "6px 10px";
+    userBubble.style.borderRadius = "12px";
     userBubble.style.maxWidth = "80%";
+    userBubble.style.fontSize = "14px";
     userBubble.innerText = input;
     chatbox.appendChild(userBubble);
 
@@ -156,7 +157,7 @@ section {
     typingDiv.style.alignItems = "center";
     typingDiv.style.gap = "5px";
     typingDiv.style.alignSelf = "flex-start";
-    typingDiv.innerHTML = '<img src="chat-icon.png" alt="Bot" style="width:20px; height:20px;"><div style="background:#00aaff; padding:8px 12px; border-radius:15px; max-width:80%;">...</div>';
+    typingDiv.innerHTML = '<img src="chat-icon.png" alt="Bot" style="width:18px; height:18px;"><div style="background:#00aaff; padding:6px 10px; border-radius:12px; max-width:80%;">...</div>';
     chatbox.appendChild(typingDiv);
     chatbox.scrollTop = chatbox.scrollHeight;
 
@@ -166,21 +167,21 @@ section {
 
       let response;
 
-      // Portfolio-specific answers (based only on your site info)
+      // Portfolio-specific answers (owner voice)
       if(input.toLowerCase().includes("developer")) {
-        response = "The developer of this website is Roman B. Maque, a 2nd-year IT student.";
+        response = "I’m Roman Maque, the developer and owner of this website.";
       } else if(input.toLowerCase().includes("about")) {
-        response = "This portfolio showcases Roman Maque’s MLBB presets, Canva and Figma projects, and achievements.";
+        response = "This site is my portfolio, showing my MLBB presets, Canva and Figma projects, and achievements.";
       } else if(input.toLowerCase().includes("contact")) {
-        response = "You can reach Roman at romanmaq0123@gmail.com or +63 930 630 6156.";
+        response = "You can reach me directly at romanmaq0123@gmail.com or call me at +63 930 630 6156.";
       } else {
-        // Free AI-style replies for other questions
+        // Free conversational replies
         if(input.toLowerCase().includes("hi") || input.toLowerCase().includes("hello")) {
-          response = "Hello! Nice to chat with you.";
+          response = "Hey there! Glad you stopped by my site.";
         } else if(input.toLowerCase().includes("how are you")) {
-          response = "I’m doing great, thanks for asking! How about you?";
+          response = "I’m doing well, thanks! Working on new projects. How about you?";
         } else {
-          response = "That’s interesting! I’ll try my best to answer: " + input;
+          response = "I’m Roman, the owner here. That’s an interesting question — here’s my thought: " + input;
         }
       }
 
@@ -190,13 +191,14 @@ section {
       botBubble.style.alignItems = "center";
       botBubble.style.gap = "5px";
       botBubble.style.alignSelf = "flex-start";
-      botBubble.innerHTML = '<img src="chat-icon.png" alt="Bot" style="width:20px; height:20px;"><div style="background:#00aaff; padding:8px 12px; border-radius:15px; max-width:80%;">' + response + '</div>';
+      botBubble.innerHTML = '<img src="chat-icon.png" alt="Bot" style="width:18px; height:18px;"><div style="background:#00aaff; padding:6px 10px; border-radius:12px; max-width:80%;">' + response + '</div>';
       chatbox.appendChild(botBubble);
 
       chatbox.scrollTop = chatbox.scrollHeight;
     }, 1000); // 1 second typing delay
   }
 </script>
+
 
     
     <!-- Navigation -->
