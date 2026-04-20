@@ -9,10 +9,20 @@
             scroll-behavior: smooth;
         }
 
+        /* Combined body styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             color: white;
+            background: linear-gradient(-45deg, #1a1a1a, #222, #333, #111);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         nav {
@@ -58,22 +68,17 @@
             font-weight: bold;
         }
 
-        #home {
-            background: #222;
-        }
-
-        #about {
-            background: #333;
-        }
-
-        #achievements {
-            background: #444;
-        }
-
-        img,
-        video {
+        img, video {
             display: block;
             margin: 15px auto;
+        }
+
+        /* Stats section */
+        .stats-section {
+            display: flex;
+            justify-content: space-around;
+            padding: 60px;
+            color: white;
         }
 
         /* Stats box styles */
@@ -90,27 +95,6 @@
             color: black;
             text-decoration: none;
             font-weight: bold;
-        }
-
-        /* Animated background */
-        body {
-            background: linear-gradient(-45deg, #1a1a1a, #222, #333, #111);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-        }
-
-        @keyframes gradientBG {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
         }
     </style>
 </head>
@@ -147,7 +131,7 @@
 </section>
 
 <!-- Stats Section -->
-<section style="background:#111; color:white; padding:60px; display:flex; justify-content:space-around;">
+<section class="stats-section">
   <div class="stats-box">
     <a href="#tiktok">
       <h3>Viral TikToks</h3>
@@ -166,11 +150,6 @@
   </div>
 </section>
 
-<!-- (rest of your sections unchanged) -->
-
-</body>
-
-
 <!-- About Section -->
 <section id="about" style="padding:40px 20px; min-height:90vh; background:linear-gradient(to right, purple, gray);">
   <div style="max-width:600px; margin:0 auto; background:#222; padding:20px; border-radius:8px;">
@@ -180,7 +159,6 @@
     <h5>Check out my portfolio featuring my MLBB preset creations on TikTok and school project showcasing my graphic design skills in Canva and Figma.</h5>
   </div>
 </section>
-
 
 <!-- Viral TikToks Section -->
 <section id="tiktok" style="background:#222; color:white; padding:60px; text-align:center;">
