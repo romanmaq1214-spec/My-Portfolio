@@ -499,24 +499,59 @@
   </div>
 </section>
     
-<!-- Contact Form -->
-<form id="contactForm" action="https://formspree.io/f/mjgjooey" method="POST" class="contact-form">
-  <label>First Name</label>
-  <input type="text" name="first_name">
+<!-- Contact Section -->
+<section id="contact" class="contact">
+  <h2>PERSONAL CONTACT INFO</h2>
+  
+  <div class="contact-box">
+    <!-- Left side: Profile -->
+    <div class="contact-left">
+      <img src="profile-placeholder.png" alt="Profile Image" class="contact-profile">
+      <h3>Roman Maque</h3>
+      <p class="contact-role">Video Editor</p>
+    </div>
 
-  <label>Last Name</label>
-  <input type="text" name="last_name">
+    <!-- Right side: Contact Info + Form -->
+    <div class="contact-right">
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <p>
+          <img src="email-icon.png" alt="Email Icon" class="icon">
+          <span>romanmaq0123@gmail.com</span>
+        </p>
+        
+        <p>
+          <img src="facebook-icon.png" alt="Facebook Icon" class="icon">
+          <a href="YOUR_FACEBOOK_URL" target="_blank">Roman Maque</a>
+        </p>
+        
+        <p>
+          <img src="phone-icon.png" alt="Phone Icon" class="icon">
+          <span>+63 930 630 6156</span>
+        </p>
+      </div>
 
-  <label>Email Address</label>
-  <input type="email" name="email">
+      <!-- Contact Form -->
+      <form id="contactForm" action="https://formspree.io/f/mjgjooey" method="POST" class="contact-form">
+        <label>First Name</label>
+        <input type="text" name="first_name">
 
-  <label>Message</label>
-  <textarea name="message" rows="4"></textarea>
+        <label>Last Name</label>
+        <input type="text" name="last_name">
 
-  <button type="submit" class="btn-submit">SEND MESSAGE</button>
-</form>
+        <label>Email Address</label>
+        <input type="email" name="email">
 
-<p class="footer-note">© 2026 Personal Contact Info. All rights reserved.</p>
+        <label>Message</label>
+        <textarea name="message" rows="4"></textarea>
+
+        <button type="submit" class="btn-submit">SEND MESSAGE</button>
+      </form>
+    </div>
+  </div>
+
+  <p class="footer-note">© 2026 Personal Contact Info. All rights reserved.</p>
+</section>
 
 <script>
   // Popup confirmation after sending
@@ -537,3 +572,5 @@
     }).catch(error => {
       alert("Error sending message. Please check your connection.");
     });
+  });
+</script>
