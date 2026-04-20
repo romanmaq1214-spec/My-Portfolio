@@ -252,24 +252,64 @@ body {
 </section>
 
 <!-- Viral TikToks Section -->
-<section id="tiktok" class="tiktok">
-  <h2>Viral TikToks</h2>
-  <p>Check out my MLBB preset creations on TikTok! I craft visually stunning designs that elevate gameplay and self-expression. Follow my account for samples and inspiration!</p>
-  <img src="tiktok.png" width="350" alt="TikTok Account">
-  <h3>As you can see this is my TikTok Account</h3>
-  <p>Explore my viral MLBB presets with over a million views each! Check out my top creations, complete with sample videos showcasing their impact.</p>
-  <h3>These are the 3 videos of my work that got over a million views</h3>
-  <img src="content.png" width="350" alt="TikTok Content">
-  <h5>No. 1 Got over 2.2 Million Views</h5>
-  <video width="300" controls><source src="vid1.mp4" type="video/mp4"></video>
-  <h5>No. 2 Got over 1.8 Million Views</h5>
-  <video width="300" controls><source src="vid2.mp4" type="video/mp4"></video>
-  <h5>No. 3 Got over 1.7 Million Views</h5>
-  <video width="300" controls><source src="vid3.mp4" type="video/mp4"></video>
+<section id="tiktok" class="tiktok" 
+         style="min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; color:white;">
+
+  <h2 style="margin-bottom:30px;">Viral TikToks</h2>
+
+  <!-- Top Row: Left and Right -->
+  <div style="display:flex; gap:40px; justify-content:center; align-items:center; flex-wrap:wrap; max-width:1000px; margin-bottom:40px;">
+    
+    <!-- Left Side -->
+    <div style="flex:1; min-width:300px; text-align:center;">
+      <p>Check out my MLBB preset creations on TikTok! I craft visually stunning designs that elevate gameplay and self-expression. Follow my account for samples and inspiration!</p>
+      <img src="tiktok.png" width="350" alt="TikTok Account" style="margin-top:15px; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.7);">
+    </div>
+    
+    <!-- Right Side -->
+    <div style="flex:1; min-width:300px; text-align:center;">
+      <h3>As you can see this is my TikTok Account</h3>
+      <p>Explore my viral MLBB presets with over a million views each! Check out my top creations, complete with sample videos showcasing their impact.</p>
+      <h3>These are the 3 videos of my work that got over a million views</h3>
+      <img src="content.png" width="350" alt="TikTok Content" style="margin-top:15px; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.7);">
+    </div>
+  </div>
+
+  <!-- Center: Videos Grid -->
+  <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:20px; max-width:700px; margin:0 auto;">
+    
+    <!-- Video 1 -->
+    <div style="background:#222; padding:20px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.7); text-align:center;">
+      <h5>No. 1 Got over 2.2 Million Views</h5>
+      <video width="100%" controls>
+        <source src="vid1.mp4" type="video/mp4">
+      </video>
+    </div>
+    
+    <!-- Video 2 -->
+    <div style="background:#222; padding:20px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.7); text-align:center;">
+      <h5>No. 2 Got over 1.8 Million Views</h5>
+      <video width="100%" controls>
+        <source src="vid2.mp4" type="video/mp4">
+      </video>
+    </div>
+    
+    <!-- Video 3 (spans full row) -->
+    <div style="background:#222; padding:20px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.7); text-align:center; grid-column:span 2;">
+      <h5>No. 3 Got over 1.7 Million Views</h5>
+      <video width="100%" controls>
+        <source src="vid3.mp4" type="video/mp4">
+      </video>
+    </div>
+    
+  </div>
 </section>
 
+
 <!-- Projects Section -->
-<section id="projects" class="projects">
+<section id="projects" class="projects" 
+         style="min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+
   <h2 style="text-align:center; margin-bottom:30px;">MY SAMPLE OUTPUTS</h2>
   
   <div class="projects-box" style="display:flex; flex-direction:column; align-items:center; gap:20px; max-width:600px; margin:0 auto;">
