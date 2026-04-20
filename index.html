@@ -104,31 +104,31 @@ section {
 <body>
 
     <!-- Navigation -->
-<nav>
-    <div class="profile">
-        <img src="prof.jpg" alt="Profile Image">
+<nav style="display:flex; justify-content:space-between; align-items:center; background:#111; padding:10px 20px; color:white; font-weight:bold;">
+    <div class="profile" style="display:flex; align-items:center; gap:10px;">
+        <img src="prof.jpg" alt="Profile Image" width="40" height="40" style="border-radius:50%; background:#555;">
         <span>Roman Maque</span>
     </div>
-    <div class="links" style="margin-right:30px;">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#achievements">Achievements</a>
-        <a href="#contact">Contact</a> <!-- New Contact link -->
+    <div class="links">
+        <a href="#home" style="margin:0 15px; color:white; text-decoration:none;">Home</a>
+        <a href="#about" style="margin:0 15px; color:white; text-decoration:none;">About</a>
+        <a href="#achievements" style="margin:0 15px; color:white; text-decoration:none;">Achievements</a>
+        <a href="#contact" style="margin:0 15px; color:white; text-decoration:none;">Contact</a>
     </div>
 </nav>
 
 <!-- Contact Section -->
-<section id="contact" style="background:linear-gradient(#333, #111); padding:40px; text-align:center; color:white; font-family:Arial, sans-serif; font-weight:bold;">
-  <h2 style="margin-bottom:20px;">PERSONAL CONTACT INFO</h2>
+<section id="contact" style="background:linear-gradient(#333, #111); padding:40px; color:white; font-family:Arial, sans-serif; font-weight:bold;">
+  <h2 style="text-align:center; margin-bottom:20px;">PERSONAL CONTACT INFO</h2>
   
   <div style="max-width:400px; margin:0 auto; background:#222; padding:20px; box-shadow:0 0 10px rgba(0,0,0,0.5); border-radius:8px;">
     
     <!-- Profile -->
     <img src="fbprof.png" alt="Profile Image" width="100" height="100" style="border-radius:50%; background:#555; display:block; margin:0 auto 10px;">
-    <h3 style="margin:10px 0;">Roman Maque</h3>
-    <p style="color:#aaa; margin-bottom:20px;">Video Editor</p>
+    <h3 style="text-align:center; margin:10px 0;">Roman Maque</h3>
+    <p style="text-align:center; color:#aaa; margin-bottom:20px;">Video Editor</p>
     
-    <!-- Contact Info with logos -->
+    <!-- Contact Info aligned left -->
     <div style="text-align:left; margin:0 auto; max-width:300px;">
       <p style="display:flex; align-items:center; gap:10px; margin:10px 0;">
         <img src="gmail.png" alt="Email Icon" width="24" height="24">
@@ -141,13 +141,13 @@ section {
       </p>
       
       <p style="display:flex; align-items:center; gap:10px; margin:10px 0;">
-        <img src=cp.png" alt="Phone Icon" width="24" height="24">
+        <img src="cp.png" alt="Phone Icon" width="24" height="24">
         <span>+63 930 630 6156</span>
       </p>
     </div>
     
     <!-- Contact Form -->
-    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="margin-top:20px; text-align:left;">
+    <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="margin-top:20px; text-align:left;">
       <label>First Name</label>
       <input type="text" name="first_name" style="width:100%; padding:8px; margin-bottom:10px;">
       
@@ -163,9 +163,31 @@ section {
       <button type="submit" style="width:100%; padding:10px; background:#00aaff; color:white; border:none; font-weight:bold;">SEND MESSAGE</button>
     </form>
     
-    <p style="font-size:12px; color:#777; margin-top:10px;">© 2026 Personal Contact Info. All rights reserved.</p>
+    <p style="font-size:12px; color:#777; margin-top:10px; text-align:center;">© 2026 Personal Contact Info. All rights reserved.</p>
   </div>
 </section>
+
+<script>
+  // Popup confirmation after sending
+  document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // stop default form submission
+    var form = e.target;
+    fetch(form.action, {
+      method: form.method,
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      if (response.ok) {
+        alert("Your message has been sent successfully!");
+        form.reset();
+      } else {
+        alert("Oops! Something went wrong. Please try again.");
+      }
+    }).catch(error => {
+      alert("Error sending message. Please check your connection.");
+    });
+  });
+</script>
 
 
 
