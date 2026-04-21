@@ -221,8 +221,8 @@ body {
     <p style="margin-top:15px;">Check out my MLBB preset creations on TikTok! I craft visually stunning designs that elevate gameplay and self-expression. Follow my account for samples and inspiration!</p>
   </div>
 
-  <!-- Top Row: Left and Right Images -->
-  <div style="display:flex; justify-content:center; align-items:flex-start; flex-wrap:wrap; gap:40px; max-width:1000px; margin-bottom:40px;">
+  <!-- Top Row: Left and Right Images (centered together) -->
+  <div style="display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:40px; max-width:1000px; margin-bottom:40px;">
     
     <!-- Left Side -->
     <div style="flex:1; min-width:300px; text-align:center;">
@@ -268,16 +268,8 @@ body {
 </section>
 
 <script>
-  // Hover + Zoom effect for videos
+  // Zoom on click (no hover float)
   document.querySelectorAll('#tiktok video').forEach(video => {
-    video.addEventListener('mouseover', () => {
-      video.style.transform = 'translateY(-8px) scale(1.05)';
-      video.style.transition = 'transform 0.3s ease';
-    });
-    video.addEventListener('mouseout', () => {
-      video.style.transform = 'none';
-    });
-    // Click to zoom (open in new tab)
     video.addEventListener('click', () => {
       const source = video.querySelector('source');
       if(source && source.src) {
@@ -287,6 +279,7 @@ body {
     });
   });
 </script>
+
 ‎
 <!-- Projects Section -->
 <section id="projects" class="projects" 
