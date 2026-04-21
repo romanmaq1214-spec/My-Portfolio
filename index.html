@@ -259,13 +259,13 @@ body {
   <div style="background:#222; padding:20px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.7); text-align:center; position:relative;">
     <h3>A Tutorial 1</h3>
     <div style="position:relative;">
-      <video id="vid1" width="100%" height="200" style="border-radius:6px; background:black;" preload="metadata">
+      <video id="vid1" width="100%" height="200" style="border-radius:6px; background:black;" preload="metadata" controls>
         <source src="vid1.mp4" type="video/mp4">
       </video>
       <!-- YouTube-style overlay -->
-      <div onclick="document.getElementById('vid1').play();" 
-           style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); cursor:pointer;">
-        <img src="youtube-logo.png" alt="Play" style="width:60px; opacity:0.8;">
+      <div id="overlay1" 
+           style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); cursor:pointer; transition:opacity 0.5s ease;">
+        <img src="youtube-logo.png" alt="Play" style="width:60px; opacity:0.9;">
       </div>
     </div>
   </div>
@@ -274,12 +274,12 @@ body {
   <div style="background:#222; padding:20px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.7); text-align:center; position:relative;">
     <h3>A Tutorial 2</h3>
     <div style="position:relative;">
-      <video id="vid2" width="100%" height="200" style="border-radius:6px; background:black;" preload="metadata">
+      <video id="vid2" width="100%" height="200" style="border-radius:6px; background:black;" preload="metadata" controls>
         <source src="vid2.mp4" type="video/mp4">
       </video>
-      <div onclick="document.getElementById('vid2').play();" 
-           style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); cursor:pointer;">
-        <img src="youtube-logo.png" alt="Play" style="width:60px; opacity:0.8;">
+      <div id="overlay2" 
+           style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); cursor:pointer; transition:opacity 0.5s ease;">
+        <img src="youtube-logo.png" alt="Play" style="width:60px; opacity:0.9;">
       </div>
     </div>
   </div>
@@ -288,12 +288,12 @@ body {
   <div style="background:#222; padding:20px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.7); text-align:center; grid-column:span 2; position:relative;">
     <h3>A Tutorial 3</h3>
     <div style="position:relative;">
-      <video id="vid3" width="100%" height="300" style="border-radius:6px; background:black;" preload="metadata">
+      <video id="vid3" width="100%" height="300" style="border-radius:6px; background:black;" preload="metadata" controls>
         <source src="vid3.mp4" type="video/mp4">
       </video>
-      <div onclick="document.getElementById('vid3').play();" 
-           style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); cursor:pointer;">
-        <img src="youtube-logo.png" alt="Play" style="width:60px; opacity:0.8;">
+      <div id="overlay3" 
+           style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); cursor:pointer; transition:opacity 0.5s ease;">
+        <img src="youtube-logo.png" alt="Play" style="width:60px; opacity:0.9;">
       </div>
     
 
@@ -303,7 +303,38 @@ body {
   <a href="https://www.youtube.com/@RomanMaque" target="_blank" style="color:#00aaff; text-decoration:none; font-weight:bold;">Click Here</a>
 </p>
 
+<!-- Script for fade-out effect -->
+<script>
+  function setupOverlay(videoId, overlayId) {
+    const video = document.getElementById(videoId);
+    const overlay = document.getElementById(overlayId);
 
+    overlay.addEventListener('click', () => {
+      video.play();
+    });
+
+    video.addEventListener('play', () => {
+      overlay.style.opacity = '0';
+      setTimeout(() => overlay.style.display = 'none', 500); // hide after fade
+    });
+  }
+
+  setupOverlay('vid1', 'overlay1');
+  setupOverlay('vid2', 'overlay2');
+  setupOverlay('vid3', 'overlay3');
+</script>
+How it works:
+Each video has a replaceable src (vid1.mp4, vid2.mp4, vid3.mp4).
+
+A YouTube logo overlay sits centered on top of the video.
+
+Clicking the logo starts playback.
+
+When the video plays, the overlay fades out smoothly (transition:opacity 0.5s) and then disappears.
+
+👉 Replace youtube-logo.png with a transparent PNG of the YouTube play button, and swap vid1.mp4, vid2.mp4, vid3.mp4 with your actual video URLs.
+
+Would you like me t
 
 <!-- Achievements Section -->
 <section id="achievements" class="achievements" 
