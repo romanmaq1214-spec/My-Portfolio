@@ -99,22 +99,6 @@ body {
   </div>
 </nav>
 
-
-  <!-- Right side nav styled like boxes -->
-  <div style="display:flex; gap:15px;">
-    <a href="#tiktok" class="stats-box" style="width:120px; height:40px; background:#222; border-radius:8px; text-align:center; display:flex; justify-content:center; align-items:center; color:white; text-decoration:none; font-weight:bold;">
-      TikTok Virals
-    </a>
-    <a href="#skills" class="stats-box" style="width:120px; height:40px; background:#222; border-radius:8px; text-align:center; display:flex; justify-content:center; align-items:center; color:white; text-decoration:none; font-weight:bold;">
-      My Skills
-    </a>
-    <a href="#achievements" class="stats-box" style="width:140px; height:40px; background:#222; border-radius:8px; text-align:center; display:flex; justify-content:center; align-items:center; color:white; text-decoration:none; font-weight:bold;">
-      Achievements
-    </a>
-  </div>
-</nav>
-
-‎
 ‎<!-- Hero Section -->
 ‎<section id="home" class="hero" style="display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:80px 20px;">
 ‎  <!-- Circle Image above the text -->
@@ -227,7 +211,7 @@ body {
 ‎
 <!-- Projects Section -->
 <section id="projects" class="projects" 
-         style="width:100%; min-height:100vh; background:linear-gradient(#333,#111); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:60px;">
+         style="width:100%; min-height:100vh; background:linear-gradient(#333,#111); display:flex; flex-direction:column; align-items:center; justify-content:flex-start; padding:60px;">
 
   <h2 style="text-align:center; margin-bottom:30px;">MY SAMPLE OUTPUTS</h2>
   
@@ -263,7 +247,42 @@ body {
     </div>
     
   </div>
+
+  <!-- Tutorials Section -->
+  <h2 style="text-align:center; margin:50px 0 30px;">My Tutorials</h2>
+  
+  <!-- Tutorials Grid -->
+  <div class="tutorials-grid" 
+       style="display:grid; grid-template-columns:repeat(2, 1fr); gap:20px; max-width:900px; margin:0 auto;">
+    
+    <!-- Tutorial 1 -->
+    <div style="background:#222; padding:20px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.7); text-align:center;">
+      <h3>A Tutorial 1</h3>
+      <iframe width="100%" height="200" src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
+    </div>
+    
+    <!-- Tutorial 2 -->
+    <div style="background:#222; padding:20px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.7); text-align:center;">
+      <h3>A Tutorial 2</h3>
+      <iframe width="100%" height="200" src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
+    </div>
+    
+    <!-- Tutorial 3 (spans full width below) -->
+    <div style="background:#222; padding:20px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.7); text-align:center; grid-column:span 2;">
+      <h3>A Tutorial 3</h3>
+      <iframe width="100%" height="300" src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allowfullscreen></iframe>
+    </div>
+    
+  </div>
+
+  <!-- YouTube Account Link -->
+  <p style="text-align:center; margin-top:30px; color:#ccc;">
+    You can visit my YouTube account for more Tutorials <br>
+    <a href="https://www.youtube.com/YOUR_CHANNEL_URL" target="_blank" style="color:#00aaff; text-decoration:none; font-weight:bold;">Click Here</a>
+  </p>
+
 </section>
+
 
 <!-- Achievements Section -->
 <section id="achievements" class="achievements" 
