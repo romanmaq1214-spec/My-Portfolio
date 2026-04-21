@@ -248,7 +248,7 @@ body {
     
   </div>
 
-  <!-- Tutorials Section -->
+<!-- Tutorials Section -->
 <h2 style="text-align:center; margin:50px 0 30px;">My Tutorials</h2>
 
 <!-- Tutorials Grid -->
@@ -256,33 +256,46 @@ body {
      style="display:grid; grid-template-columns:repeat(2, 1fr); gap:20px; max-width:900px; margin:0 auto;">
 
   <!-- Tutorial 1 -->
-  <div style="background:#222; padding:20px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.7); text-align:center;">
+  <div style="background:#222; padding:20px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.7); text-align:center; position:relative;">
     <h3>A Tutorial 1</h3>
-    <video width="100%" height="200" controls style="border-radius:6px; background:black;">
-      <source src="vid1.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+    <div style="position:relative;">
+      <video id="vid1" width="100%" height="200" style="border-radius:6px; background:black;" preload="metadata">
+        <source src="vid1.mp4" type="video/mp4">
+      </video>
+      <!-- YouTube-style overlay -->
+      <div onclick="document.getElementById('vid1').play();" 
+           style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); cursor:pointer;">
+        <img src="youtube-logo.png" alt="Play" style="width:60px; opacity:0.8;">
+      </div>
+    </div>
   </div>
 
   <!-- Tutorial 2 -->
-  <div style="background:#222; padding:20px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.7); text-align:center;">
+  <div style="background:#222; padding:20px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.7); text-align:center; position:relative;">
     <h3>A Tutorial 2</h3>
-    <video width="100%" height="200" controls style="border-radius:6px; background:black;">
-      <source src="vid2.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+    <div style="position:relative;">
+      <video id="vid2" width="100%" height="200" style="border-radius:6px; background:black;" preload="metadata">
+        <source src="vid2.mp4" type="video/mp4">
+      </video>
+      <div onclick="document.getElementById('vid2').play();" 
+           style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); cursor:pointer;">
+        <img src="youtube-logo.png" alt="Play" style="width:60px; opacity:0.8;">
+      </div>
+    </div>
   </div>
 
-  <!-- Tutorial 3 (spans full width below) -->
-  <div style="background:#222; padding:20px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.7); text-align:center; grid-column:span 2;">
+  <!-- Tutorial 3 -->
+  <div style="background:#222; padding:20px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.7); text-align:center; grid-column:span 2; position:relative;">
     <h3>A Tutorial 3</h3>
-    <video width="100%" height="300" controls style="border-radius:6px; background:black;">
-      <source src="vid3.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
-
-</div>
+    <div style="position:relative;">
+      <video id="vid3" width="100%" height="300" style="border-radius:6px; background:black;" preload="metadata">
+        <source src="vid3.mp4" type="video/mp4">
+      </video>
+      <div onclick="document.getElementById('vid3').play();" 
+           style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); cursor:pointer;">
+        <img src="youtube-logo.png" alt="Play" style="width:60px; opacity:0.8;">
+      </div>
+    
 
 <!-- YouTube Account Link -->
 <p style="text-align:center; margin-top:30px; color:#ccc;">
