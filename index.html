@@ -352,30 +352,46 @@ body {
 ‎
 ‎  
 ‎<!-- Contact Section -->
-‎<section id="contact" class="contact" style="background:linear-gradient(#333,#111); padding:60px; color:white; font-family:Arial,sans-serif; font-weight:bold;">
-‎  <div class="contact-box" style="display:flex; justify-content:space-between; align-items:flex-start; max-width:900px; margin:0 auto; background:#222; padding:30px; box-shadow:0 0 10px rgba(0,0,0,0.5); border-radius:8px;">
-‎    
-‎<!-- Left side: Profile + Info -->
-‎<div class="contact-left" style="flex:1; margin-right:30px;">
-‎  <h2 style="text-align:center; margin-bottom:20px;">PERSONAL CONTACT INFO</h2>
-‎  <img src="fbprof.png" alt="Profile Image" style="width:120px; height:120px; border-radius:50%; background:#555; display:block; margin:0 auto 15px;">
-‎  <h3 style="text-align:center; margin:10px 0;">Roman Maque</h3>
-‎  <p class="contact-role" style="text-align:center; color:#aaa; margin-bottom:20px;">Video Editor</p>
-‎
-‎  <!-- Contact Info aligned left -->
-‎  <div class="contact-info" style="text-align:left; max-width:250px; margin-left:0;">
-‎    <p style="display:flex; align-items:center; gap:10px; 0;">
-‎      <img src="fb.png" alt="Facebook Icon" style="width:50px; height:50px;">
-‎      <a href="https://www.facebook.com/roman.maque.2025" target="_blank" style="color:#00aaff; text-decoration:none;">Roman Maque</a>
-‎    </p>
-‎    <p style="display:flex; align-items:center; gap:10px; 0;">
-‎      <img src="cp.png" alt="Phone Icon" style="width:50px; height:50px;">
-‎      <span>+63 930 630 6156</span>
-‎    </p>
-‎  </div>
-‎</div>
-‎
-‎
-‎    <!-- Right side: Contact Form -->
-‎    <div class="contact-right" style="flex:1;">
-‎      <form id="contactForm" action="https://formspree.io/f/mjgjooey" method="POST" style="background:#222; 
+<section id="contact" class="contact" style="background:linear-gradient(#333,#111); padding:60px; color:white; font-family:Arial,sans-serif; font-weight:bold;">
+  <div class="contact-box" style="display:flex; flex-direction:column; max-width:900px; margin:0 auto; background:#222; padding:30px; box-shadow:0 0 10px rgba(0,0,0,0.5); border-radius:8px;">
+
+    <!-- Top Row: Title + Contact Info -->
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:30px;">
+      <h2 style="margin:0;">Contact Form</h2>
+      <div class="contact-info" style="text-align:right;">
+        <p style="display:flex; align-items:center; gap:10px; justify-content:flex-end; margin:5px 0;">
+          <img src="fb.png" alt="Facebook Icon" style="width:30px; height:30px;">
+          <a href="https://www.facebook.com/roman.maque.2025" target="_blank" style="color:#00aaff; text-decoration:none;">Roman Maque</a>
+        </p>
+        <p style="display:flex; align-items:center; gap:10px; justify-content:flex-end; margin:5px 0;">
+          <img src="cp.png" alt="Phone Icon" style="width:30px; height:30px;">
+          <span>+63 930 630 6156</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Friendly Description -->
+    <p style="color:#aaa; margin-bottom:20px;">
+      Got a project in mind or just want to say hello? Drop me a message here and I’ll get back to you soon.
+    </p>
+
+    <!-- Contact Form -->
+    <form id="contactForm" action="https://formspree.io/f/mjgjooey" method="POST" style="display:flex; flex-direction:column; gap:15px;">
+      <input type="text" name="name" placeholder="Full Name" required style="padding:12px; border:none; border-radius:6px;">
+      <input type="email" name="email" placeholder="Email Address" required style="padding:12px; border:none; border-radius:6px;">
+      <select name="subject" required style="padding:12px; border:none; border-radius:6px;">
+        <option value="">Choose Subject</option>
+        <option value="inquiry">General Inquiry</option>
+        <option value="project">Project Collaboration</option>
+      </select>
+      <textarea name="message" placeholder="Your Message" required style="padding:12px; border:none; border-radius:6px; min-height:120px;"></textarea>
+
+      <!-- Buttons -->
+      <div style="display:flex; justify-content:space-between; margin-top:10px;">
+        <a href="#home" style="background:black; color:white; padding:12px 20px; border-radius:6px; text-decoration:none;">BACK TO HOME</a>
+        <button type="submit" style="background:pink; color:black; padding:12px 20px; border:none; border-radius:6px; font-weight:bold; cursor:pointer;">SUBMIT NOW</button>
+      </div>
+    </form>
+  </div>
+</section>
+
