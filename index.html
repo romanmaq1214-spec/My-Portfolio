@@ -3,200 +3,78 @@
 ‎<head>
 ‎  <meta charset="UTF-8">
 ‎  <title>My Website</title>
-‎  <style>
 ‎/* Body background */
-‎body {
-‎  font-family: Arial, sans-serif;
-‎  margin: 0;
-‎  color: white;
-‎  background: linear-gradient(#333, #111); /* unified black/gray gradient */
-‎}
-‎
-‎/* Home Section */
-‎#home {
-‎  background: linear-gradient(#333, #111);
-‎}
-‎
-‎/* Hero Section */
-‎.hero {
-‎  background: linear-gradient(#333, #111);
-‎  color: white;
-‎  padding: 120px 40px;
-‎  display: flex;
-‎  align-items: center;
-‎  justify-content: space-between;
-‎}
-‎
-‎/* About Section */
-‎.about {
-‎  background: linear-gradient(#333, #111);
-‎  padding: 40px 20px;
-‎  min-height: 90vh;
-‎}
-‎
-‎/* Projects Section */
-‎.projects {
-‎  background: linear-gradient(#333, #111);
-‎  padding-top: 100px;
-‎}
-‎
-‎/* Achievements Section */
-‎.achievements {
-‎  background: linear-gradient(#333, #111);
-‎  color: white;
-‎  padding: 60px;
-‎}
-‎
-‎/* TikTok Section */
-‎.tiktok {
-‎  background: linear-gradient(#333, #111);
-‎  color: white;
-‎  padding: 60px;
-‎  text-align: center;
-‎}
-‎
-‎/* Contact Section */
-‎.contact {
-‎  background: linear-gradient(#333, #111);
-‎  padding: 60px;
-‎  color: white;
-‎  font-family: Arial, sans-serif;
-‎  font-weight: bold;
-‎}
-‎
-‎/* Boxes (stats, about-box, projects-box, achievements-text, contact-box, forms) */
-‎.stats-box,
-‎.about-box,
-‎.projects-box,
-‎.achievements-text,
-‎.contact-box,
-‎.contact-form {
-‎  background: #222; /* unified dark box color */
-‎  border-radius: 8px;
-‎  padding: 20px;
-‎}
-‎
-‎/* Stats Section */
-‎.stats-section {
-‎  display: flex;
-‎  justify-content: space-around;
-‎  padding: 40px;
-‎  color: white;
-‎}
-‎
-‎.stats-box {
-‎  width: 150px;
-‎  height: 150px;
-‎  border-radius: 8px;
-‎  margin: 10px;
-‎  text-align: center;
-‎  display: flex;
-‎  flex-direction: column;
-‎  justify-content: center;
-‎  align-items: center;
-‎  transition: transform 0.3s ease, box-shadow 0.3s ease;
-‎}
-‎
-‎.stats-box:hover {
-‎  transform: translateY(-8px);
-‎  box-shadow: 0 8px 15px rgba(0,0,0,0.3);
-‎}
-‎
-‎.stats-box a {
-‎  color: black;
-‎  text-decoration: none;
-‎  font-weight: bold;
-‎}
-‎
-‎.stats-box h3, .stats-box p {
-‎  margin: 5px 0;
-‎}
-‎
-‎/* Navbar */
-‎.navbar {
-‎  background: #111;
-‎  padding: 15px 40px;
-‎  display: flex;
-‎  justify-content: space-between;
-‎  align-items: center;
-‎  position: fixed;
-‎  top: 0;
-‎  left: 0;
-‎  width: 100%;
-‎  z-index: 1000;
-‎}
-‎
-‎.nav-profile {
-‎  display: flex;
-‎  align-items: center;
-‎  gap: 10px;
-‎}
-‎
-‎.nav-profile span {
-‎  color: white;
-‎  font-weight: bold;
-‎}
-‎
-‎.nav-profile img {
-‎  width: 40px;
-‎  height: 40px;
-‎  border-radius: 50%;
-‎  background: #555;
-‎}
-‎
-‎.nav-links {
-‎  display: flex;
-‎  gap: 25px;
-‎  padding-right: 40px;
-‎  margin-right: 40px;
-‎}
-‎
-‎.nav-links a {
-‎  color: white;
-‎  text-decoration: none;
-‎}
-‎
-‎/* Buttons */
-‎.btn-primary {
-‎  background: #00aaff;
-‎  color: white;
-‎  padding: 10px 20px;
-‎  text-decoration: none;
-‎  border-radius: 5px;
-‎}
-‎
-‎.btn-secondary {
-‎  border: 2px solid #00aaff;
-‎  color: #00aaff;
-‎  padding: 10px 20px;
-‎  text-decoration: none;
-‎  border-radius: 5px;
-‎  margin-left: 10px;
-‎}
-‎
-‎.btn-submit {
-‎  width: 100%;
-‎  padding: 10px;
-‎  background: #00aaff;
-‎  color: white;
-‎  border: none;
-‎  font-weight: bold;
-‎  cursor: pointer;
-‎}
-‎
-‎/* Footer */
-‎.footer-note {
-‎  font-size: 12px;
-‎  color: #777;
-‎  margin-top: 10px;
-‎  text-align: center;
-‎}
-‎body {
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  color: white;
+  background: linear-gradient(#333, #111); /* black-gray gradient */
+}
+
+/* Home Section */
+#home {
   background: linear-gradient(#333, #111);
 }
 
-‎
-‎</style>
+/* Hero Section */
+.hero {
+  background: linear-gradient(#333, #111);
+  color: white;
+  padding: 120px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* About Section */
+.about {
+  background: linear-gradient(#333, #111);
+  padding: 40px 20px;
+  min-height: 90vh;
+}
+
+/* Projects Section */
+.projects {
+  background: linear-gradient(#333, #111);
+  padding-top: 100px;
+}
+
+/* Achievements Section */
+.achievements {
+  background: linear-gradient(#333, #111);
+  color: white;
+  padding: 60px;
+}
+
+/* TikTok Section */
+.tiktok {
+  background: linear-gradient(#333, #111);
+  color: white;
+  padding: 60px;
+  text-align: center;
+}
+
+/* Contact Section */
+.contact {
+  background: linear-gradient(#333, #111);
+  padding: 60px;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+/* Boxes (unchanged) */
+.stats-box,
+.about-box,
+.projects-box,
+.achievements-text,
+.contact-box,
+.contact-form {
+  background: #222; /* keep solid dark box color */
+  border-radius: 8px;
+  padding: 20px;
+}
+
 ‎
 ‎<body>
 ‎<!-- Navigation -->
