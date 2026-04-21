@@ -77,16 +77,28 @@ body {
 }
 </style>
 ‎
-‎<body>
 ‎<!-- Navigation -->
-‎<nav style="background:#111; height:50px; display:flex; justify-content:center; align-items:center; position:fixed; top:0; left:0; width:100%; z-index:500;">
-‎  <div style="display:flex; gap:25px;">
-‎    <a href="#home" style="color:white; text-decoration:none;">Home</a>
-‎    <a href="#about" style="color:white; text-decoration:none;">About</a>
-‎    <a href="#contact" style="color:white; text-decoration:none;">Contact</a>
-‎  </div>
-‎</nav>
-‎</body>
+<nav style="background:#111; height:50px; display:flex; justify-content:space-between; align-items:center; position:fixed; top:0; left:0; width:100%; z-index:500; padding:0 20px;">
+  <!-- Left side nav -->
+  <div style="display:flex; gap:25px;">
+    <a href="#home" style="color:white; text-decoration:none;">Home</a>
+    <a href="#about" style="color:white; text-decoration:none;">About</a>
+  </div>
+
+  <!-- Right side nav styled like boxes -->
+  <div style="display:flex; gap:15px;">
+    <a href="#tiktok" class="stats-box" style="width:120px; height:40px; background:#222; border-radius:8px; text-align:center; display:flex; justify-content:center; align-items:center; color:white; text-decoration:none; font-weight:bold;">
+      TikTok Virals
+    </a>
+    <a href="#skills" class="stats-box" style="width:120px; height:40px; background:#222; border-radius:8px; text-align:center; display:flex; justify-content:center; align-items:center; color:white; text-decoration:none; font-weight:bold;">
+      My Skills
+    </a>
+    <a href="#achievements" class="stats-box" style="width:140px; height:40px; background:#222; border-radius:8px; text-align:center; display:flex; justify-content:center; align-items:center; color:white; text-decoration:none; font-weight:bold;">
+      Achievements
+    </a>
+  </div>
+</nav>
+
 ‎
 ‎<!-- Hero Section -->
 ‎<section id="home" class="hero" style="display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:80px 20px;">
