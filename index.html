@@ -483,3 +483,89 @@ body {
 
   </div>
 </section>
+
+  <!-- Chatbot Icon -->
+<div id="chat-icon" 
+     style="position:fixed; bottom:20px; right:20px; background:purple; color:white; 
+            border-radius:50%; width:60px; height:60px; display:flex; align-items:center; 
+            justify-content:center; cursor:pointer; box-shadow:0 0 10px rgba(0,0,0,0.5); z-index:1000;">
+  💬
+</div>
+
+<!-- Chatbox -->
+<div id="chat-box" 
+     style="position:fixed; bottom:90px; right:20px; width:300px; height:400px; 
+            background:#222; border-radius:10px; box-shadow:0 0 15px rgba(0,0,0,0.7); 
+            display:none; flex-direction:column; overflow:hidden; z-index:1000;">
+
+  <!-- Header -->
+  <div style="background:purple; padding:10px; color:white; font-weight:bold; text-align:center;">
+    Chat with Roman
+  </div>
+
+  <!-- Messages -->
+  <div id="messages" 
+       style="flex:1; padding:10px; overflow-y:auto; display:flex; flex-direction:column; gap:10px; color:white;">
+  </div>
+
+  <!-- Input -->
+  <div style="display:flex; border-top:1px solid #444;">
+    <input id="user-input" type="text" placeholder="Type a message..." 
+           style="flex:1; padding:10px; border:none; outline:none; background:#333; color:white;">
+    <button id="send-btn" 
+            style="background:purple; border:none; color:white; padding:10px; cursor:pointer;">
+      Send
+    </button>
+  </div>
+</div>
+
+<script>
+  const chatIcon = document.getElementById('chat-icon');
+  const chatBox = document.getElementById('chat-box');
+  const sendBtn = document.getElementById('send-btn');
+  const userInput = document.getElementById('user-input');
+  const messages = document.getElementById('messages');
+
+  // Toggle chatbox
+  chatIcon.onclick = () => {
+    chatBox.style.display = chatBox.style.display === 'none' ? 'flex' : 'none';
+  };
+
+  // Send message
+  sendBtn.onclick = () => {
+    const text = userInput.value.trim();
+    if (!text) return;
+
+    // User message (right side)
+    const userMsg = document.createElement('div');
+    userMsg.style.alignSelf = 'flex-end';
+    userMsg.style.background = '#444';
+    userMsg.style.padding = '8px 12px';
+    userMsg.style.borderRadius = '10px';
+    userMsg.textContent = text;
+    messages.appendChild(userMsg);
+
+    userInput.value = '';
+
+    // Bot typing indicator
+    const typing = document.createElement('div');
+    typing.style.alignSelf = 'flex-start';
+    typing.style.display = 'flex';
+    typing.style.alignItems = 'center';
+    typing.innerHTML = `<span style="margin-right:8px;">🤖</span><em>typing...</em>`;
+    messages.appendChild(typing);
+
+    // Simulate bot reply
+    setTimeout(() => {
+      typing.remove();
+      const botMsg = document.createElement('div');
+      botMsg.style.alignSelf = 'flex-start';
+      botMsg.style.background = '#555';
+      botMsg.style.padding = '8px 12px';
+      botMsg.style.borderRadius = '10px';
+      botMsg.innerHTML = `<span style="margin-right:8px;">🤖</span> Hello! I’m Roman’s bot. You said: "${text}"`;
+      messages.appendChild(botMsg);
+      messages.scrollTop = messages.scrollHeight;
+    }, 1500);
+  };
+</script>
