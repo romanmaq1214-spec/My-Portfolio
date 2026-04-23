@@ -486,17 +486,17 @@ body {
 
   <!-- Chatbot Icon -->
 <div id="chat-icon" 
-     style="position:fixed; bottom:20px; right:20px; background:purple; color:white; 
-            border-radius:50%; width:60px; height:60px; display:flex; align-items:center; 
-            justify-content:center; cursor:pointer; box-shadow:0 0 10px rgba(0,0,0,0.5); z-index:1000;">
-  💬
+     style="position:fixed; bottom:20px; right:20px; cursor:pointer; z-index:1000;">
+  <!-- Empty image placeholder for bot icon -->
+  <img src="bot-icon.png" alt="Chatbot Icon" 
+       style="width:60px; height:60px; border-radius:50%; box-shadow:0 0 10px rgba(0,0,0,0.5);">
 </div>
 
 <!-- Chatbox -->
 <div id="chat-box" 
-     style="position:fixed; bottom:90px; right:20px; width:300px; height:400px; 
-            background:#222; border-radius:10px; box-shadow:0 0 15px rgba(0,0,0,0.7); 
-            display:none; flex-direction:column; overflow:hidden; z-index:1000;">
+     style="position:fixed; bottom:90px; right:20px; width:320px; height:420px; 
+            background:#f0f0f0; border-radius:10px; box-shadow:0 0 15px rgba(0,0,0,0.7); 
+            display:none; flex-direction:column; overflow:hidden; z-index:1000; font-family:sans-serif;">
 
   <!-- Header -->
   <div style="background:purple; padding:10px; color:white; font-weight:bold; text-align:center;">
@@ -505,13 +505,13 @@ body {
 
   <!-- Messages -->
   <div id="messages" 
-       style="flex:1; padding:10px; overflow-y:auto; display:flex; flex-direction:column; gap:10px; color:white;">
+       style="flex:1; padding:10px; overflow-y:auto; display:flex; flex-direction:column; gap:10px;">
   </div>
 
   <!-- Input -->
-  <div style="display:flex; border-top:1px solid #444;">
+  <div style="display:flex; border-top:1px solid #ccc;">
     <input id="user-input" type="text" placeholder="Type a message..." 
-           style="flex:1; padding:10px; border:none; outline:none; background:#333; color:white;">
+           style="flex:1; padding:10px; border:none; outline:none; background:#fff; color:#000;">
     <button id="send-btn" 
             style="background:purple; border:none; color:white; padding:10px; cursor:pointer;">
       Send
@@ -526,22 +526,27 @@ body {
   const userInput = document.getElementById('user-input');
   const messages = document.getElementById('messages');
 
+  // Hidden personal info (not displayed on site)
+  const romanInfo = "Roman Maque, 22 yrs old, from Brgy 7, Moises Padilla Negros Occidental. Currently a student at Central Philippines State University, 2nd year IT. Likes editing videos and designing.";
+
   // Toggle chatbox
   chatIcon.onclick = () => {
     chatBox.style.display = chatBox.style.display === 'none' ? 'flex' : 'none';
   };
 
-  // Send message
-  sendBtn.onclick = () => {
+  // Send message on button click or Enter key
+  function sendMessage() {
     const text = userInput.value.trim();
     if (!text) return;
 
-    // User message (right side)
+    // User message bubble (right side)
     const userMsg = document.createElement('div');
     userMsg.style.alignSelf = 'flex-end';
-    userMsg.style.background = '#444';
+    userMsg.style.background = '#0084ff';
+    userMsg.style.color = 'white';
     userMsg.style.padding = '8px 12px';
-    userMsg.style.borderRadius = '10px';
+    userMsg.style.borderRadius = '15px';
+    userMsg.style.maxWidth = '70%';
     userMsg.textContent = text;
     messages.appendChild(userMsg);
 
@@ -552,20 +557,40 @@ body {
     typing.style.alignSelf = 'flex-start';
     typing.style.display = 'flex';
     typing.style.alignItems = 'center';
-    typing.innerHTML = `<span style="margin-right:8px;">🤖</span><em>typing...</em>`;
+    typing.innerHTML = `<img src="bot-icon.png" style="width:24px; height:24px; border-radius:50%; margin-right:6px;"> <em>typing...</em>`;
     messages.appendChild(typing);
+    messages.scrollTop = messages.scrollHeight;
 
     // Simulate bot reply
     setTimeout(() => {
       typing.remove();
       const botMsg = document.createElement('div');
       botMsg.style.alignSelf = 'flex-start';
-      botMsg.style.background = '#555';
+      botMsg.style.background = '#e5e5ea';
+      botMsg.style.color = '#000';
       botMsg.style.padding = '8px 12px';
-      botMsg.style.borderRadius = '10px';
-      botMsg.innerHTML = `<span style="margin-right:8px;">🤖</span> Hello! I’m Roman’s bot. You said: "${text}"`;
+      botMsg.style.borderRadius = '15px';
+      botMsg.style.maxWidth = '70%';
+      botMsg.style.display = 'flex';
+      botMsg.style.alignItems = 'center';
+      botMsg.innerHTML = `<img src="bot-icon.png" style="width:24px; height:24px; border-radius:50%; margin-right:6px;">`;
+
+      // Bot logic: if user asks about Roman, reply with hidden info
+      if (/roman|maque|who are you|your info/i.test(text)) {
+        botMsg.innerHTML += romanInfo;
+      } else {
+        botMsg.innerHTML += "Hello! You said: " + text;
+      }
+
       messages.appendChild(botMsg);
       messages.scrollTop = messages.scrollHeight;
     }, 1500);
-  };
+  }
+
+  sendBtn.onclick = sendMessage;
+  userInput.addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+      sendMessage();
+    }
+  });
 </script>
