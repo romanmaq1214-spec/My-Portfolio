@@ -484,7 +484,7 @@ body {
   </div>
 </section>
 
-  <!-- Chatbot Icon -->
+<!-- Chatbot Icon -->
 <div id="chat-icon" 
      style="position:fixed; bottom:20px; right:20px; cursor:pointer; z-index:1000;">
   <!-- Empty image placeholder for bot icon -->
@@ -495,8 +495,9 @@ body {
 <!-- Chatbox -->
 <div id="chat-box" 
      style="position:fixed; bottom:90px; right:20px; width:320px; height:420px; 
-            background:#f0f0f0; border-radius:10px; box-shadow:0 0 15px rgba(0,0,0,0.7); 
-            display:none; flex-direction:column; overflow:hidden; z-index:1000; font-family:sans-serif;">
+            background:linear-gradient(to bottom, #111, #333); border-radius:10px; 
+            box-shadow:0 0 15px rgba(0,0,0,0.7); display:none; flex-direction:column; 
+            overflow:hidden; z-index:1000; font-family:sans-serif;">
 
   <!-- Header -->
   <div style="background:purple; padding:10px; color:white; font-weight:bold; text-align:center;">
@@ -509,9 +510,9 @@ body {
   </div>
 
   <!-- Input -->
-  <div style="display:flex; border-top:1px solid #ccc;">
+  <div style="display:flex; border-top:1px solid #444;">
     <input id="user-input" type="text" placeholder="Type a message..." 
-           style="flex:1; padding:10px; border:none; outline:none; background:#fff; color:#000;">
+           style="flex:1; padding:10px; border:none; outline:none; background:#222; color:#fff;">
     <button id="send-btn" 
             style="background:purple; border:none; color:white; padding:10px; cursor:pointer;">
       Send
@@ -566,8 +567,8 @@ body {
       typing.remove();
       const botMsg = document.createElement('div');
       botMsg.style.alignSelf = 'flex-start';
-      botMsg.style.background = '#e5e5ea';
-      botMsg.style.color = '#000';
+      botMsg.style.background = '#444';
+      botMsg.style.color = '#fff';
       botMsg.style.padding = '8px 12px';
       botMsg.style.borderRadius = '15px';
       botMsg.style.maxWidth = '70%';
@@ -575,11 +576,11 @@ body {
       botMsg.style.alignItems = 'center';
       botMsg.innerHTML = `<img src="bot-icon.png" style="width:24px; height:24px; border-radius:50%; margin-right:6px;">`;
 
-      // Bot logic: if user asks about Roman, reply with hidden info
+      // Bot logic: reply normally
       if (/roman|maque|who are you|your info/i.test(text)) {
         botMsg.innerHTML += romanInfo;
       } else {
-        botMsg.innerHTML += "Hello! You said: " + text;
+        botMsg.innerHTML += "Thanks for your message! I'm here to chat.";
       }
 
       messages.appendChild(botMsg);
@@ -594,3 +595,4 @@ body {
     }
   });
 </script>
+
